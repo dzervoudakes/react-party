@@ -1,7 +1,7 @@
 {
   "name": "react-scratchonthebreak",
   "version": "1.0.0",
-  "description": "Dynamic party info site.",
+  "description": "Party info site.",
   "main": "index.js",
   "repository": {
     "type": "git",
