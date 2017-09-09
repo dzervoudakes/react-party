@@ -48,8 +48,7 @@ const partyTheme = {
     fontFamily: 'Questrial, sans-serif',
     palette: {
         accent1Color: '#fff',
-        primary1Color: '#007bff',
-        textColor: '#343a40'
+        primary1Color: '#007bff'
     }
 };
 

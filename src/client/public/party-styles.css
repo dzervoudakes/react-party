@@ -4,14 +4,74 @@
     font-family: 'Questrial', sans-serif;
 }
 
+body, html, .app {
+    height: 100%;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+h3, p, li {
+    color: #333;
+}
+
 .hidden {
     display: none;
 }
 
-.t-brand {
-    cursor: default;
+.wrapper {
+    position: relative;
+    min-height: 100%;
 }
 
-/* .content-container {
+.gray-bar {
+    background: #343a40;
+    padding: 18px;
+}
 
-} */
+.t-brand {
+    cursor: default;
+    font-size: 24px;
+    color: #fff;
+    display: inline-block;
+    line-height: 36px;
+}
+
+.button-bar {
+    float: right;
+}
+
+.blue-banner {
+    padding: 80px 18px;
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+}
+
+.blue-banner h2 {
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.panel {
+    padding: 28px 18px 100px;
+}
+
+.content-container {
+
+}
+
+.footer {
+    background: #343a40;
+    position: absolute;
+    top: 100%;
+    margin-top: -72px;
+    padding: 28px 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer p {
+    color: #fff;
+}

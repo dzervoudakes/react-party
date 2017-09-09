@@ -12,12 +12,14 @@ export class Header extends React.Component {
                         <FlatButton
                             disabled={active.whenWhereView}
                             label="When/Where"
+                            labelStyle={{ color: '#fff', fontSize: '16px', opacity: active.whenWhereView ? '0.5' : '1', textTransform: 'none' }}
                             onClick={() => { show('whenWhereView') }}
                             secondary={true}
                         />
                         <FlatButton
                             disabled={active.faqView}
                             label="FAQ"
+                            labelStyle={{ color: '#fff', fontSize: '16px', opacity: active.faqView ? '0.5' : '1', textTransform: 'none' }}
                             onClick={() => { show('faqView') }}
                             secondary={true}
                         />
