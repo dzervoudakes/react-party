@@ -14,8 +14,11 @@ class PartyTime extends React.Component {
     }
 
     updatePageView(view) {
-        if (view === 'whenWhereView') return this.setState({ whenWhereView: true, faqView: false });
-        if (view === 'faqView') return this.setState({ whenWhereView: false, faqView: true });
+        if (view === 'whenWhereView') {
+            return this.setState({ whenWhereView: true, faqView: false });
+        } else if (view === 'faqView') {
+            return this.setState({ whenWhereView: false, faqView: true });
+        }
     }
 
     render() {
@@ -24,14 +27,9 @@ class PartyTime extends React.Component {
             faqView: this.state.faqView
         };
 
-        const show = {
-            whenWhereView: this.updatePageView('whenWhereView'),
-            faqView: this.updatePageView('faqView')
-        };
-
         return (
             <div className="wrapper">
-                <Header active={active} show={show} />
+                <Header active={active} show={this.updatePageView} />
                 <div className="panel">
                     <Info active={active.whenWhereView} />
                     <Faq active={active.faqView} />

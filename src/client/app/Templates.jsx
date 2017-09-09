@@ -2,7 +2,7 @@ import React from 'react';
 import FlatButton from 'material-ui/FlatButton';
 
 export class Header extends React.Component {
-render() {
+    render() {
         const { active, show } = this.props;
         return (
             <header className="header">
@@ -10,15 +10,15 @@ render() {
                     <p className="t-brand">Party At Tyson's</p>
                     <div className="button-bar">
                         <FlatButton
-                            disabled={!active.whenWhereView}
+                            disabled={active.whenWhereView}
                             label="When/Where"
-                            onClick={show.whenWhereView}
+                            onClick={() => { show('whenWhereView') }}
                             secondary={true}
                         />
                         <FlatButton
-                            disabled={!active.faqView}
+                            disabled={active.faqView}
                             label="FAQ"
-                            onClick={show.faqView}
+                            onClick={() => { show('faqView') }}
                             secondary={true}
                         />
                     </div>
@@ -36,7 +36,7 @@ export class Footer extends React.Component {
     render() {
         return (
             <footer className="footer">
-                <p class="t-copyright">Copyright &copy; tynick {new Date().getFullYear()}</p>
+                <p className="t-copyright">Copyright &copy; tynick {new Date().getFullYear()}</p>
             </footer>
         );
     }

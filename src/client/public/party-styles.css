@@ -8,6 +8,10 @@
     display: none;
 }
 
+.t-brand {
+    cursor: default;
+}
+
 /* .content-container {
 
 } */
