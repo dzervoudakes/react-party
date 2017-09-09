@@ -1,4 +1,4 @@
 # react-party
-Dynamic Party Info Site.
+Dynamic party info site.
 
-More info on its way...
+_More info on its way..._
