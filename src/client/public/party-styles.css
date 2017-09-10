@@ -123,12 +123,28 @@ li {
 .faq-block .question {
     cursor: pointer;
     background: #f1f1f1;
-    padding: 20px;
+    padding: 20px 50px 20px 20px;
+    position: relative;
 }
 
 .faq-block .question:hover {
     background: rgba(0, 123, 255, 1);
     color: #fff;
+}
+
+.faq-block .question:after {
+    content: '+';
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -10px;
+    line-height: 0.75em;
+    font-size: 24px;
+}
+
+.faq-block.open .question:after {
+    content: '-';
 }
 
 .faq-block .answer {
