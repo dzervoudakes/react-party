@@ -39,7 +39,7 @@ class PartyTime extends React.Component {
 
 // Blue: #007bff
 // Dark Gray: #343a40
-// Light Gray: #f8f9fa
+// Light Gray: #f1f1f1
 const partyTheme = {
     borderRadius: '20px',
     fontFamily: 'Questrial, sans-serif',
