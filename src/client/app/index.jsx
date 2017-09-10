@@ -14,11 +14,8 @@ class PartyTime extends React.Component {
     }
 
     updatePageView(view) {
-        if (view === 'whenWhereView') {
-            return this.setState({ whenWhereView: true, faqView: false });
-        } else if (view === 'faqView') {
-            return this.setState({ whenWhereView: false, faqView: true });
-        }
+        if (view === 'whenWhereView') return this.setState({ whenWhereView: true, faqView: false });
+        if (view === 'faqView') return this.setState({ whenWhereView: false, faqView: true });
     }
 
     render() {

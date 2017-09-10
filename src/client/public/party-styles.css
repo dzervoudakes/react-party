@@ -30,6 +30,10 @@ li {
     list-style: none;
 }
 
+.t-heavy {
+    font-weight: bold;
+}
+
 .gray-rule {
     height: 3px;
     border-radius: 5px;
@@ -66,6 +70,27 @@ li {
     float: right;
 }
 
+.cheeseburger-button {
+    cursor: pointer;
+    float: right;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    opacity: 0.2;
+    transition: all 0.2s;
+}
+
+.cheeseburger-button:hover {
+    opacity: 1;
+}
+
+.cheeseburger-button .bar {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
 .blue-banner {
     padding: 80px 18px;
     background: #007bff;
@@ -85,10 +110,6 @@ li {
     margin: 0 auto;
 }
 
-.content-container {
-
-}
-
 .footer {
     background: #343a40;
     position: absolute;
@@ -105,17 +126,19 @@ li {
     font-size: 18px;
 }
 
+@media (min-width: 591px) {
+    .phone-visible {
+        display: none;
+    }
+}
+
 @media (max-width: 590px) {
+    .phone-hidden {
+        display: none;
+    }
+
     h1 {
         font-size: 28px;
-    }
-
-    .blue-banner {
-        padding: 30px 18px;
-    }
-
-    .blue-banner h2 {
-        font-size: 22px;
     }
 
     h3 {
@@ -128,5 +151,21 @@ li {
 
     .t-brand {
         font-size: 18px;
+    }
+
+    .button-bar {
+        display: none;
+    }
+
+    .blue-banner {
+        padding: 30px 18px;
+    }
+
+    .blue-banner h2 {
+        font-size: 22px;
+    }
+
+    .panel {
+        padding: 30px 18px 95px;
     }
 }

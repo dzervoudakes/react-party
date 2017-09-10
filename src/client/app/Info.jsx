@@ -9,9 +9,9 @@ export class Info extends React.Component {
                 <h3>When/Where</h3>
                 <hr className="gray-rule" />
                 <ul className="when-where-list">
-                    <li>Date: Saturday, August 26th</li>
-                    <li>Time: 5pm to question mark</li>
-                    <li>Location: Tyson's House</li>
+                    <li><span className="t-heavy">Date:</span> Saturday, August 26th</li>
+                    <li><span className="t-heavy">Time:</span> 5pm to question mark</li>
+                    <li><span className="t-heavy">Location:</span> Tyson's House</li>
                 </ul>
             </div>
         );
