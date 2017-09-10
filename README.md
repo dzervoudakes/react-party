@@ -1,6 +1,4 @@
 # react-party
-Party info site.
-
 Rebuilt my buddy's party website with React.
 
 - - - -
