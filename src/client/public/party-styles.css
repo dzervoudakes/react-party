@@ -20,9 +20,6 @@ h3 {
 p, li {
     color: #333;
     margin-bottom: 15px;
-}
-
-p, li {
     font-size: 20px;
 }
 
@@ -117,6 +114,7 @@ li {
 .faq-block .answer,
 .faq-block .question {
     margin-bottom: 0;
+    line-height: 1.2em;
     transition: all 0.2s;
 }
 
