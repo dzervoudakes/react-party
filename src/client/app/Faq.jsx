@@ -1,7 +1,3 @@
-// @TODO: GENERATE THE FAQ BLOCKS DYNAMICALLY BASED ON NUMBER OF ENTRIES IN A MONGO DB TABLE
-// @TODO: GRAB THE TEXT FOR EACH QUESTION AND ANSWER FROM THE DB ROW
-// @TODO: MAKE AN ACCORDION/COLLAPSE PANEL FOR THE FAQ ENTRIES
-
 import React from 'react';
 
 export class Faq extends React.Component {
@@ -21,6 +17,18 @@ export class Faq extends React.Component {
                 <div className="faq-block">
                     <p className="question">Who is going to win?</p>
                     <p className="answer">Floyd Mayweather.</p>
+                </div>
+                <div className="faq-block">
+                    <p className="question">I'm not very smart and I think Conor McGregor is going to win. Will you bet me?</p>
+                    <p className="answer">Yes.</p>
+                </div>
+                <div className="faq-block">
+                    <p className="question">Will there be food provided?</p>
+                    <p className="answer">Yes.</p>
+                </div>
+                <div className="faq-block">
+                    <p className="question">Can I bring my dog?</p>
+                    <p className="answer">I don't care</p>
                 </div>
             </div>
         );

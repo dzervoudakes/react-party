@@ -1,5 +1,3 @@
-// @TODO: PULL IN DATE, TIME AND LOCATION FROM A DB ROW (make sure it only calls/renders ONCE)
-
 import React from 'react';
 
 export class Info extends React.Component {
