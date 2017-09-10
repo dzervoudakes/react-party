@@ -9,6 +9,7 @@ export class Faq extends React.Component {
         return (
             <div id="faq" className={'content-container faq' + (this.props.active ? '' : ' hidden')}>
                 <h3>FAQ</h3>
+                <hr className="gray-rule" />
                 <div className="faq-block">
                     <p className="question">Why are you having a party?</p>
                     <p className="answer">I like to party.</p>

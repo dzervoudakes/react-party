@@ -7,6 +7,7 @@ export class Info extends React.Component {
         return (
             <div id="whenWhere" className={'content-container when-where' + (this.props.active ? '' : ' hidden')}>
                 <h3>When/Where</h3>
+                <hr className="gray-rule" />
                 <ul className="when-where-list">
                     <li>Date: Saturday, August 26th</li>
                     <li>Time: 5pm to question mark</li>
