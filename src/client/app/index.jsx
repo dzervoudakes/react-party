@@ -24,7 +24,7 @@ class PartyTime extends React.Component {
             faqView: this.state.faqView
         };
 
-        const dialogText = (view) => {
+        const dialogText = view => {
             return `Ay yo, Tyson... Something went wrong when trying to grab the '${view}' data. You should talk to Daaan Zeee and get him to fix it for you.`;
         };
 
