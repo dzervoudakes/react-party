@@ -11,20 +11,12 @@ export class Faq extends React.Component {
     }
 
     getFaq() {
-        let infoData;
-        axios
-            .get(`${path}data/faq.json`)
-            .then(resp => {
-                faqData = resp.data;
-                this.setState({ faqData: faqData });
-            })
-            .catch(err => {
-                // @TODO: let's put some err handlin' here, ya? => material-ui dialog ;)
-            });
+        return axios.get(`${path}data/faq.json`);
     }
 
     componentWillMount() {
-        this.faqData();
+        // @TODO: ACTUAL ERROR HANDLING WILL GO HERE, I PROMISE :heartmew:
+        return this.getFaq().then(resp => this.setState({ faqData: resp.data })).catch(err => console.log(err));
     }
 
     render() {

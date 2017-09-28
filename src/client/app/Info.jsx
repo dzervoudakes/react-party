@@ -11,20 +11,12 @@ export class Info extends React.Component {
     }
 
     getInfo() {
-        let infoData;
-        axios
-            .get(`${path}data/info.json`)
-            .then(resp => {
-                infoData = resp.data;
-                this.setState({ infoData: infoData });
-            })
-            .catch(err => {
-                // @TODO: let's put some err handlin' here, ya? => material-ui dialog ;)
-            });
+        return axios.get(`${path}data/info.json`);
     }
 
     componentWillMount() {
-        this.getInfo();
+        // @TODO: ACTUAL ERROR HANDLING WILL GO HERE, I PROMISE :heartmew:
+        return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => console.log(err));
     }
     
     render() {
