@@ -15,16 +15,19 @@ export class Info extends React.Component {
     }
 
     componentWillMount() {
-        // @TODO: ACTUAL ERROR HANDLING WILL GO HERE, I PROMISE :heartmew:
-        return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => console.log(err));
+        const handleError = () => {
+            // stuff 'n things
+        };
+        return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => handleError());
     }
     
     render() {
-        const data = this.state.infoData;
-        const keys = Object.keys(data);
+        const { infoData } = this.state;
+        const keys = Object.keys(infoData);
         const listItems = keys.map(key =>
-            <li key={key}><span className="t-heavy">{key}:</span> {data[key]}</li>
+            <li key={key}><span className="t-heavy">{key}:</span> {infoData[key]}</li>
         );
+        
         return (
             <div id="whenWhere" className={'content-container when-where' + (this.props.active ? '' : ' hidden')}>
                 <h3>When/Where</h3>
