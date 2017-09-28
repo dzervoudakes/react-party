@@ -1,9 +1,30 @@
 import React from 'react';
 
+const axios = require('axios');
+const path = require('./common/path.js')['path']();
+
 export class Faq extends React.Component {
     constructor() {
         super();
-        this.state = { entry: 0 }
+        this.state = { entry: 0, faqData: {} }
+        this.getFaq = this.getFaq.bind(this);
+    }
+
+    getFaq() {
+        let infoData;
+        axios
+            .get(`${path}data/faq.json`)
+            .then(resp => {
+                faqData = resp.data;
+                this.setState({ faqData: faqData });
+            })
+            .catch(err => {
+                // @TODO: let's put some err handlin' here, ya? => material-ui dialog ;)
+            });
+    }
+
+    componentWillMount() {
+        this.faqData();
     }
 
     render() {
@@ -18,7 +39,8 @@ export class Faq extends React.Component {
                 question.classList.toggle('open');
             }
         };
-
+        
+        // @TODO: GENERATE THIS LIST DYNAMICALLY
         return (
             <div id="faq" className={'content-container faq' + (this.props.active ? '' : ' hidden')}>
                 <h3>FAQ</h3>

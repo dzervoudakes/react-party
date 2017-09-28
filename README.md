@@ -8,3 +8,4 @@ Rebuilt my buddy's party website with React.
 * ES6 + Babel
 * Webpack
 * Material-ui
+* Axios
