@@ -62,7 +62,7 @@ export class Faq extends React.Component {
                     actions={actions}
                     onRequestClose={this.handleDialogClose}
                     open={this.state.dialogOpen}
-                    title="Ay yo, Tyson... Something went wrong when trying to grab the 'FAQ' data. You should talk to Daaan Zeee and get him to fix it for you."
+                    title={this.props.dialogText}
                 />
             </div>
         );

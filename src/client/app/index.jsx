@@ -24,12 +24,16 @@ class PartyTime extends React.Component {
             faqView: this.state.faqView
         };
 
+        const dialogText = (view) => {
+            return `Ay yo, Tyson... Something went wrong when trying to grab the '${view}' data. You should talk to Daaan Zeee and get him to fix it for you.`;
+        };
+
         return (
             <div className="wrapper">
                 <Header active={active} show={this.updatePageView} />
                 <div className="panel">
-                    <Info active={active.whenWhereView} />
-                    <Faq active={active.faqView} />
+                    <Info active={active.whenWhereView} dialogText={dialogText('When/Where')} />
+                    <Faq active={active.faqView} dialogText={dialogText('FAQ')} />
                 </div>
                 <Footer />
             </div>
