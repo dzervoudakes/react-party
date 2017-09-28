@@ -1,4 +1,6 @@
 import React from 'react';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 
 const axios = require('axios');
 const path = require('./common/path.js')['path']();
@@ -6,17 +8,22 @@ const path = require('./common/path.js')['path']();
 export class Info extends React.Component {
     constructor() {
         super();
-        this.state = { infoData: {} };
+        this.state = { infoData: {}, dialogOpen: false };
         this.getInfo = this.getInfo.bind(this);
+        this.handleDialogClose = this.handleDialogClose.bind(this);
     }
 
     getInfo() {
         return axios.get(`${path}data/info.json`);
     }
 
+    handleDialogClose() {
+        this.setState({ dialogOpen: false });
+    }
+
     componentWillMount() {
         const handleError = () => {
-            // stuff 'n things
+            this.setState({ dialogOpen: true });
         };
         return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => handleError());
     }
@@ -27,12 +34,22 @@ export class Info extends React.Component {
         const listItems = keys.map(key =>
             <li key={key}><span className="t-heavy">{key}:</span> {infoData[key]}</li>
         );
-        
+
+        const actions = [
+            <FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
+        ];
+
         return (
             <div id="whenWhere" className={'content-container when-where' + (this.props.active ? '' : ' hidden')}>
                 <h3>When/Where</h3>
                 <hr className="gray-rule" />
                 <ul className="when-where-list">{listItems}</ul>
+                <Dialog
+                    actions={actions}
+                    onRequestClose={this.handleDialogClose}
+                    open={this.state.dialogOpen}
+                    title="Ay yo, Tyson... Something went wrong when trying to grab the 'When/Where' data. You should talk to Daaan Zeee and get him to fix it for you."
+                />
             </div>
         );
     }
