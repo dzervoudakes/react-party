@@ -10,7 +10,7 @@ export class Header extends React.Component {
         this.setMenuState = this.setMenuState.bind(this);
     }
 
-    setMenuState(state) {
+    setMenuState(state = false) {
         this.setState({ mobileMenuOpen: state });
     }
 
@@ -46,11 +46,11 @@ export class Header extends React.Component {
                         docked={false}
                         open={this.state.mobileMenuOpen}
                         openSecondary={true}
-                        onRequestChange={() => { this.setMenuState(false); }}
+                        onRequestChange={() => { this.setMenuState(); }}
                         width={200}
                     >
-                        <MenuItem onClick={() => { show('whenWhereView'); this.setMenuState(false); }}>When/Where</MenuItem>
-                        <MenuItem onClick={() => { show('faqView'); this.setMenuState(false); }}>Faq</MenuItem>
+                        <MenuItem onClick={() => { show('whenWhereView'); this.setMenuState(); }}>When/Where</MenuItem>
+                        <MenuItem onClick={() => { show('faqView'); this.setMenuState(); }}>Faq</MenuItem>
                     </Drawer>
                 </div>
                 <div className="blue-banner">
