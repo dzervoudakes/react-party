@@ -5,6 +5,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Faq } from './Faq.jsx';
 import { Info } from './Info.jsx';
 import { Header, Footer } from './Templates.jsx';
+require('../sass/style.scss');
 
 class PartyTime extends React.Component {
     constructor() {
