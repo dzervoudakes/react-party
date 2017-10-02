@@ -45,7 +45,7 @@ export class Faq extends React.Component {
         const faqItems = faqData.map((obj, index) =>
             <div className="faq-block" data-entry={index} key={`faq-section-${index}`}>
                 <p className="question" onClick={() => { updatePanel(index); }}>{obj.question}</p>
-                <p className="answer">{obj.answer}</p>
+                <p className="answer" dangerouslySetInnerHTML={{ __html: obj.answer }} />
             </div>
         );
 

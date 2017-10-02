@@ -27,6 +27,15 @@ li {
     list-style: none;
 }
 
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
 .t-heavy {
     font-weight: bold;
 }

@@ -32,7 +32,7 @@ export class Info extends React.Component {
         const { infoData } = this.state;
         const keys = Object.keys(infoData);
         const listItems = keys.map(key =>
-            <li key={key}><span className="t-heavy">{key}:</span> {infoData[key]}</li>
+            <li key={key}><span className="t-heavy">{key}:</span> <span dangerouslySetInnerHTML={{ __html: infoData[key] }} /></li>
         );
 
         const actions = [

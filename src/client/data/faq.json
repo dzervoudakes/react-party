@@ -1,6 +1,10 @@
 {
     "questions": [
         {
+            "question": "I'm weird and don't know how to party. What is a party?",
+            "answer": "Yes, you are weird. Click the following link to see what a <a href='https://en.wikipedia.org/wiki/Party'>party</a> is."
+        },
+        {
             "question": "Why are you having a party?",
             "answer": "I like to party."
         },
