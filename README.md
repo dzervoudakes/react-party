@@ -14,3 +14,6 @@ While I posted the link to the beta on my web server, my buddy actively manages 
 * Material-ui
 * Axios
 * SASS
+
+### Coming Soon
+* "RSVP" functionality
