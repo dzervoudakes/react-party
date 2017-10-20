@@ -36,7 +36,7 @@ export class Header extends React.Component {
                             secondary={true}
                         />
                     </div>
-                    <div className="cheeseburger-button phone-visible" onClick={() => { this.setMenuState(true); }}>
+                    <div className="cheeseburger-button phone-visible" onClick={() => this.setMenuState(true)}>
                         <div className="bar"></div>
                         <div className="bar"></div>
                         <div className="bar"></div>
