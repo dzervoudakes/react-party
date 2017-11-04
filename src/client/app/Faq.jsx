@@ -52,7 +52,7 @@ export class Faq extends React.Component {
         const actions = [
             <FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
         ];
-        
+
         return (
             <div id="faq" className={'content-container faq' + (this.props.active ? '' : ' hidden')}>
                 <h3>FAQ</h3>

@@ -16,25 +16,29 @@ export class Header extends React.Component {
 
     render() {
         const { active, show } = this.props;
+        const createButton = (view, label) => {
+            const labelOpts = { color: '#fff', fontSize: '16px', opacity: active[view] ? '0.5' : '1', textTransform: 'none' };
+            return <FlatButton
+                disabled={active[view]}
+                label={label}
+                labelStyle={labelOpts}
+                onClick={() => show(view)}
+                secondary={true}
+            />
+        };
+
+        const createMenuItem = (view, label) => {
+            return <MenuItem onClick={() => { show(view); this.setMenuState(); }}>{label}</MenuItem>;
+        }
+        
         return (
             <header className="header">
                 <div className="gray-bar">
                     <p className="t-brand">Party At Tyson's</p>
                     <div className="button-bar phone-hidden">
-                        <FlatButton
-                            disabled={active.whenWhereView}
-                            label="When/Where"
-                            labelStyle={{ color: '#fff', fontSize: '16px', opacity: active.whenWhereView ? '0.5' : '1', textTransform: 'none' }}
-                            onClick={() => { show('whenWhereView') }}
-                            secondary={true}
-                        />
-                        <FlatButton
-                            disabled={active.faqView}
-                            label="FAQ"
-                            labelStyle={{ color: '#fff', fontSize: '16px', opacity: active.faqView ? '0.5' : '1', textTransform: 'none' }}
-                            onClick={() => { show('faqView') }}
-                            secondary={true}
-                        />
+                        {createButton('whenWhereView', 'When/Where')}
+                        {createButton('faqView', 'FAQ')}
+                        {createButton('rsvpView', 'RSVP')}
                     </div>
                     <div className="cheeseburger-button phone-visible" onClick={() => this.setMenuState(true)}>
                         <div className="bar"></div>
@@ -46,11 +50,12 @@ export class Header extends React.Component {
                         docked={false}
                         open={this.state.mobileMenuOpen}
                         openSecondary={true}
-                        onRequestChange={() => { this.setMenuState(); }}
+                        onRequestChange={() => this.setMenuState()}
                         width={200}
                     >
-                        <MenuItem onClick={() => { show('whenWhereView'); this.setMenuState(); }}>When/Where</MenuItem>
-                        <MenuItem onClick={() => { show('faqView'); this.setMenuState(); }}>Faq</MenuItem>
+                        {createMenuItem('whenWhereView', 'When/Where')}
+                        {createMenuItem('faqView', 'FAQ')}
+                        {createMenuItem('rsvpView', 'RSVP')}
                     </Drawer>
                 </div>
                 <div className="blue-banner">

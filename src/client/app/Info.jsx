@@ -34,7 +34,7 @@ export class Info extends React.Component {
         const listItems = keys.map(key =>
             <li key={key}><span className="t-heavy">{key}:</span> <span dangerouslySetInnerHTML={{ __html: infoData[key] }} /></li>
         );
-
+        
         const actions = [
             <FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
         ];

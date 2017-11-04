@@ -2,27 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { Faq } from './Faq.jsx';
 import { Info } from './Info.jsx';
+import { Faq } from './Faq.jsx';
+import { Rsvp } from './Rsvp.jsx';
 import { Header, Footer } from './Templates.jsx';
 require('../sass/style.scss');
+
+// @TODO: FIGURE OUT WHAT STUFF CAN BE FURTHER REUSED/COMPONENTIZED
 
 class PartyTime extends React.Component {
     constructor() {
         super();
-        this.state = { whenWhereView: true, faqView: false };
+        this.state = { whenWhereView: true, faqView: false, rsvpView: false };
         this.updatePageView = this.updatePageView.bind(this);
     }
 
+    // @TODO: DO THIS A BETTER WAY, MAN
     updatePageView(view) {
-        if (view === 'whenWhereView') return this.setState({ whenWhereView: true, faqView: false });
-        if (view === 'faqView') return this.setState({ whenWhereView: false, faqView: true });
+        if (view === 'whenWhereView') return this.setState({ whenWhereView: true, faqView: false, rsvpView: false });
+        if (view === 'faqView') return this.setState({ whenWhereView: false, faqView: true, rsvpView: false });
+        if (view === 'rsvpView') return this.setState({ whenWhereView: false, faqView: false, rsvpView: true });
     }
 
     render() {
+        const { whenWhereView:w, faqView:f, rsvpView:r } = this.state;
         const active = {
-            whenWhereView: this.state.whenWhereView,
-            faqView: this.state.faqView
+            whenWhereView: w,
+            faqView: f,
+            rsvpView: r
         };
 
         const dialogText = view => {
@@ -35,6 +42,7 @@ class PartyTime extends React.Component {
                 <div className="panel">
                     <Info active={active.whenWhereView} dialogText={dialogText('When/Where')} />
                     <Faq active={active.faqView} dialogText={dialogText('FAQ')} />
+                    <Rsvp active={active.rsvpView} dialogText={dialogText('RSVP')} />
                 </div>
                 <Footer />
             </div>
