@@ -41,11 +41,11 @@ export class Rsvp extends React.Component {
         if (firstName.length > 0 && lastName.length > 0) {
             const { rsvpAttendees } = this.state;
             const newAttendee = {
-                "firstName": firstName,
-                "lastName": lastName
+                firstName: firstName,
+                lastName: lastName
             };
             rsvpAttendees.push(newAttendee);
-            const data = { "attendees": rsvpAttendees };
+            const data = { attendees: rsvpAttendees };
             this.postAttendee(data).then(() => {
                 document.getElementById('firstName').value = '';
                 document.getElementById('lastName').value = '';
