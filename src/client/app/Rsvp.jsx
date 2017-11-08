@@ -10,7 +10,7 @@ const path = require('./common/path.js')['path']();
 export class Rsvp extends React.Component {
     constructor() {
         super();
-        this.state = { rsvpAttendees: [], rsvpData: {}, dialogOpen: false, firstNameInvalid: false, lastNameInvalid: false };
+        this.state = { attendees: [], dialogOpen: false, firstNameInvalid: false, lastNameInvalid: false };
         this.getAttendees = this.getAttendees.bind(this);
         this.handleDialogClose = this.handleDialogClose.bind(this);
         this.submitForm = this.submitForm.bind(this);
@@ -20,8 +20,8 @@ export class Rsvp extends React.Component {
         return axios.get(`${path}data/rsvp.json`);
     }
 
-    postAttendee(data) {
-        return axios.put(`${path}data/rsvp.json`, data);
+    postAttendees(data) {
+        return axios.post(`${path}data/post.php`, data);
     }
 
     handleDialogClose() {
@@ -32,24 +32,25 @@ export class Rsvp extends React.Component {
         const handleError = () => {
             this.setState({ dialogOpen: true });
         };
-        return this.getAttendees().then(resp => this.setState({ rsvpData: resp.data, rsvpAttendees: resp.data.attendees })).catch(err => handleError());
+        return this.getAttendees().then(resp => this.setState({ attendees: resp.data })).catch(err => handleError());
     }
 
     submitForm() {
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
         if (firstName.length > 0 && lastName.length > 0) {
-            const { rsvpAttendees } = this.state;
+            const { attendees } = this.state;
             const newAttendee = {
                 firstName: firstName,
                 lastName: lastName
             };
-            rsvpAttendees.push(newAttendee);
-            const data = { attendees: rsvpAttendees };
-            this.postAttendee(data).then(() => {
+            attendees.push(newAttendee);
+            const data = { attendees: attendees };
+            this.postAttendees(data).then(resp => {
+                console.log(resp);
                 document.getElementById('firstName').value = '';
                 document.getElementById('lastName').value = '';
-                this.setState({ rsvpAttendees: rsvpAttendees, firstNameInvalid: false, lastNameInvalid: false });
+                this.setState({ attendees: attendees, firstNameInvalid: false, lastNameInvalid: false });
             }).catch(err => {
                 console.log(err)
             });
@@ -63,8 +64,8 @@ export class Rsvp extends React.Component {
     }
     
     render() {
-        const { rsvpAttendees, firstNameInvalid, lastNameInvalid } = this.state;
-        const listItems = rsvpAttendees.map((obj, index) =>
+        const { attendees, firstNameInvalid, lastNameInvalid } = this.state;
+        const listItems = attendees.map((obj, index) =>
             <li key={`rsvp-${index}`}>{obj.firstName} {obj.lastName}</li>
         );
 
@@ -88,7 +89,7 @@ export class Rsvp extends React.Component {
                     </div>
                     <input className="submit-button" type="submit" onClick={(e) => { e.preventDefault(); this.submitForm(); }} value="Reserve My Spot" />
                 </form>
-                <p>{rsvpAttendees.length} people have RSVP'd:</p>
+                <p>{attendees.length} people have RSVP'd:</p>
                 <hr className="gray-rule" />
                 <ul className="rsvp-list">{listItems}</ul>
                 <Dialog
