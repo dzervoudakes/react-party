@@ -3,6 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
 const axios = require('axios');
+const handleError = require('./common/error.js');
 const path = require('./common/path.js')['path']();
 
 export class Faq extends React.Component {
@@ -22,10 +23,7 @@ export class Faq extends React.Component {
     }
 
     componentWillMount() {
-        const handleError = () => {
-            this.setState({ dialogOpen: true });
-        };
-        return this.getFaq().then(resp => this.setState({ faqData: resp.data.questions })).catch(err => handleError());
+        return this.getFaq().then(resp => this.setState({ faqData: resp.data.questions })).catch(err => handleError(this));
     }
 
     render() {

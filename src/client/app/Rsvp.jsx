@@ -3,9 +3,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
 const axios = require('axios');
+const handleError = require('./common/error.js');
 const path = require('./common/path.js')['path']();
-
-// @TODO: APPROPRIATE ERROR HANDLING FOR THE DIALOG
 
 export class Rsvp extends React.Component {
     constructor() {
@@ -29,10 +28,9 @@ export class Rsvp extends React.Component {
     }
 
     componentWillMount() {
-        const handleError = () => {
-            this.setState({ dialogOpen: true });
-        };
-        return this.getAttendees().then(resp => this.setState({ attendees: resp.data })).catch(err => handleError());
+        return this.getAttendees().then(resp => {
+            if (resp.data.length) this.setState({ attendees: resp.data });
+        }).catch(err => handleError(this));
     }
 
     submitForm() {
@@ -47,12 +45,11 @@ export class Rsvp extends React.Component {
             attendees.push(newAttendee);
             const data = { attendees: attendees };
             this.postAttendees(data).then(resp => {
-                console.log(resp);
                 document.getElementById('firstName').value = '';
                 document.getElementById('lastName').value = '';
                 this.setState({ attendees: attendees, firstNameInvalid: false, lastNameInvalid: false });
             }).catch(err => {
-                console.log(err)
+                handleError(this);
             });
         } else {
             this.setState({

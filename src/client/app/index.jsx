@@ -8,7 +8,8 @@ import { Rsvp } from './Rsvp.jsx';
 import { Header, Footer } from './Templates.jsx';
 require('../sass/style.scss');
 
-// @TODO: FIGURE OUT WHAT STUFF CAN BE FURTHER REUSED/COMPONENTIZED
+// @TODO: BREAK OUT THE HANDLEDIALOGCLOSE FUNCTION INTO ITS OWN COMMON
+// @TODO: GET THE DIALOG INTO INDEX.JSX
 
 class PartyTime extends React.Component {
     constructor() {
@@ -18,9 +19,11 @@ class PartyTime extends React.Component {
     }
 
     updatePageView(view) {
-        if (view === 'whenWhereView') return this.setState({ whenWhereView: true, faqView: false, rsvpView: false });
-        if (view === 'faqView') return this.setState({ whenWhereView: false, faqView: true, rsvpView: false });
-        if (view === 'rsvpView') return this.setState({ whenWhereView: false, faqView: false, rsvpView: true });
+        return this.setState({
+            whenWhereView: view === 'whenWhereView' ? true : false,
+            faqView: view === 'faqView' ? true : false,
+            rsvpView: view === 'rsvpView' ? true : false
+        });
     }
 
     render() {

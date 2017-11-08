@@ -3,7 +3,9 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
 const axios = require('axios');
+const handleError = require('./common/error.js');
 const path = require('./common/path.js')['path']();
+
 
 export class Info extends React.Component {
     constructor() {
@@ -22,10 +24,7 @@ export class Info extends React.Component {
     }
 
     componentWillMount() {
-        const handleError = () => {
-            this.setState({ dialogOpen: true });
-        };
-        return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => handleError());
+        return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => handleError(this));
     }
     
     render() {

@@ -1,5 +1,5 @@
 module.exports = {
-    path: function() {
+    path: () => {
         const path = window.location.pathname;
         return path;
     }
