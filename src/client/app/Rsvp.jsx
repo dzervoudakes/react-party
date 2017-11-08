@@ -1,17 +1,14 @@
 import React from 'react';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 
 const axios = require('axios');
 const handleError = require('./common/error.js');
-const path = require('./common/path.js')['path']();
+const path = require('./common/path.js')();
 
 export class Rsvp extends React.Component {
     constructor() {
         super();
-        this.state = { attendees: [], dialogOpen: false, firstNameInvalid: false, lastNameInvalid: false };
+        this.state = { attendees: [], firstNameInvalid: false, lastNameInvalid: false };
         this.getAttendees = this.getAttendees.bind(this);
-        this.handleDialogClose = this.handleDialogClose.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
 
@@ -23,14 +20,14 @@ export class Rsvp extends React.Component {
         return axios.post(`${path}data/post.php`, data);
     }
 
-    handleDialogClose() {
-        this.setState({ dialogOpen: false });
-    }
-
     componentWillMount() {
+        const { setErrorView } = this.props;
         return this.getAttendees().then(resp => {
             if (resp.data.length) this.setState({ attendees: resp.data });
-        }).catch(err => handleError(this));
+        }).catch(err => {
+            setErrorView('RSVP');
+            handleError(this);
+        });
     }
 
     submitForm() {
@@ -57,7 +54,6 @@ export class Rsvp extends React.Component {
                 lastNameInvalid: lastName.length === 0 ? true : false
             });
         }
-        
     }
     
     render() {
@@ -66,10 +62,6 @@ export class Rsvp extends React.Component {
             <li key={`rsvp-${index}`}>{obj.firstName} {obj.lastName}</li>
         );
 
-        const actions = [
-            <FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
-        ];
-
         return (
             <div id="rsvp" className={'content-container rsvp' + (this.props.active ? '' : ' hidden')}>
                 <h3>RSVP</h3>
@@ -77,11 +69,11 @@ export class Rsvp extends React.Component {
                 <p>Because you know you want to come to the party, and the courteous thing to do would be to let the organizer know your intentions.</p>       
                 <form className="rsvp-form">
                     <div className="form-input-container left">
-                        <label for="firstName">First Name:</label>
+                        <label>First Name:</label>
                         <input id="firstName" className={firstNameInvalid ? 'invalid' : ''} name="firstName" type="text" />
                     </div>
                     <div className="form-input-container right">
-                        <label for="lastName">Last Name:</label>
+                        <label>Last Name:</label>
                         <input id="lastName" className={lastNameInvalid ? 'invalid' : ''} name="lastName" type="text" />
                     </div>
                     <input className="submit-button" type="submit" onClick={(e) => { e.preventDefault(); this.submitForm(); }} value="Reserve My Spot" />
@@ -89,12 +81,6 @@ export class Rsvp extends React.Component {
                 <p>{attendees.length} people have RSVP'd:</p>
                 <hr className="gray-rule" />
                 <ul className="rsvp-list">{listItems}</ul>
-                <Dialog
-                    actions={actions}
-                    onRequestClose={this.handleDialogClose}
-                    open={this.state.dialogOpen}
-                    title={this.props.dialogText}
-                />
             </div>
         );
     }
