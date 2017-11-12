@@ -39,6 +39,7 @@
             outline: none;
             padding: 5px;
             transition: opacity 0.2s;
+            -webkit-appearance: none;
             &:hover {
                 opacity: 0.6;
             }
