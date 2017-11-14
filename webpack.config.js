@@ -3,14 +3,14 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-const APP_DIR = path.resolve(__dirname, 'src/client/app');
+const BUILD_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, 'src/app');
 
 const config = {
     entry: `${APP_DIR}/index.jsx`,
     output: {
         path: BUILD_DIR,
-        filename: 'party-bundle.min.js'
+        filename: 'js/app.min.js'
     },
     module: {
         loaders: [
@@ -26,7 +26,7 @@ const config = {
         ]
     },
     plugins: [
-	    new ExtractTextPlugin('party-styles.min.css', {
+	    new ExtractTextPlugin('css/styles.min.css', {
             allChunks: true
         }),
         new OptimizeCssAssetsPlugin({
