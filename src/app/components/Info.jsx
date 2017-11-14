@@ -1,8 +1,8 @@
 import React from 'react';
 
 const axios = require('axios');
-const handleError = require('./common/error.js');
-const path = require('./common/path.js')();
+const handleError = require('../common/error.js');
+const path = require('../common/path.js')();
 
 export class Info extends React.Component {
     constructor() {
