@@ -17,7 +17,7 @@ export class Rsvp extends React.Component {
     }
 
     postAttendees(data) {
-        return axios.post(`${path}data/post.php`, data);
+        return axios.post(`/api/post-rsvp`, data);
     }
 
     componentWillMount() {
