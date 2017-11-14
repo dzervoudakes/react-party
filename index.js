@@ -4,7 +4,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const jsonfile = require('jsonfile');
 const favicon = require('serve-favicon');
-const pkg = require('./package.json');
 
 // @TODO: FIGURE OUT WHY .gz WON'T SERVE UP
 // @TODO: ON NON '/' ROUTES, THE FAVICON STILL THROWS A 404 DESPITE THE FORCED 204 BELOW
@@ -47,5 +46,5 @@ app.use((req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log(`${pkg.name} booted up on localhost:3000`);
+    console.log('react-party booted up on localhost:3000');
 });
