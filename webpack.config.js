@@ -3,8 +3,8 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src/app');
+const BUILD_DIR = path.resolve(__dirname, 'public');
 
 const config = {
     entry: `${APP_DIR}/index.jsx`,
