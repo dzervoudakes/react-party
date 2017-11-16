@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/post-rsvp', (req, res) => {
     const file = `${__dirname}/public/data/rsvp.json`;
-    jsonfile.writeFile(file, req.body.attendees, function(err) {
+    jsonfile.writeFile(file, req.body.attendees, err => {
         if (!err) res.sendStatus(200);
         if (err) {
             console.log(err);
