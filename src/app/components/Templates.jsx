@@ -58,7 +58,7 @@ export class Header extends React.Component {
                         {createMenuItem('rsvpView', 'RSVP')}
                     </Drawer>
                 </div>
-                <div className="blue-banner">
+                <div className="banner">
                     <h1>Tyson is having a party!</h1>
                     <h2>OMG OMG OMG OMG</h2>
                 </div>

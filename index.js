@@ -41,5 +41,5 @@ app.use((req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('react-party booted up on localhost:3000');
+    console.log('react-party booted up on port 3000');
 });

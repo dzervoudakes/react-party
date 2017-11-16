@@ -8,31 +8,47 @@ body, html, .app {
     height: 100%;
 }
 
+.phone-visible {
+    @media (min-width: $breakpoint-min) {
+        display: none;
+    }
+}
+
+.phone-hidden {
+    @media (max-width: $breakpoint-max) {
+        display: none;
+    }
+}
+
 h1 {
-    font-size: 38px;
+    @media (min-width: $breakpoint-min) {
+        font-size: 38px;
+    }
+    @media (max-width: $breakpoint-max) {
+        font-size: 28px;
+    }
 }
 
 h3 {
     color: $gray-common;
-    font-size: 26px;
+    @media (min-width: $breakpoint-min) {
+        font-size: 26px;
+    }
+    @media (max-width: $breakpoint-max) {
+        font-size: 24px;
+    }
 }
 
 p, li {
     color: $gray-common;
     font-size: 20px;
+    @media (min-width: $breakpoint-min) {
+        font-size: 20px;
+    }
+    @media (max-width: $breakpoint-max) {
+        font-size: 18px;
+    }
     margin-bottom: 15px;
-}
-
-label, input {
-    color: $gray-common;
-}
-
-label, input {
-    font-size: 20px;
-}
-
-input {
-    font-size: 16px;
 }
 
 li {
@@ -46,6 +62,15 @@ a {
     &:hover {
         opacity: 0.6;
     }
+}
+
+label, input {
+    color: $gray-common;
+    font-size: 20px;
+}
+
+input {
+    font-size: 16px;
 }
 
 .t-heavy {
@@ -78,5 +103,10 @@ a {
 .panel {
     margin: 0 auto;
     max-width: 600px;
-    padding: 50px 18px 115px;
+    @media (min-width: $breakpoint-min) {
+        padding: 50px 18px 115px;
+    }
+    @media (max-width: $breakpoint-max) {
+        padding: 30px 18px 95px;
+    }
 }

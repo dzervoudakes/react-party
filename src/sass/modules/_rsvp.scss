@@ -16,10 +16,10 @@
                 border: 1px solid $super-light-gray;
                 border-radius: $border-radius-common;
                 box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+                margin-bottom: 15px;
                 outline: 0;
                 padding: 5px;
                 transition: border-color 0.2s;
-                margin-bottom: 15px;
                 width: 90%;
                 &:focus,
                 &.invalid:focus {
