@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 app.use(bodyParser.json());
 
-app.get('/favicon.ico', (req, res) => {
+app.get('*/favicon.ico', (req, res) => {
     res.status(204);
 });
 
