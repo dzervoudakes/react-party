@@ -30,7 +30,7 @@ h1 {
 }
 
 h3 {
-    color: $gray-common;
+    color: $color-gray-common;
     @media (min-width: $breakpoint-min) {
         font-size: 26px;
     }
@@ -40,7 +40,7 @@ h3 {
 }
 
 p, li {
-    color: $gray-common;
+    color: $color-gray-common;
     font-size: 20px;
     @media (min-width: $breakpoint-min) {
         font-size: 20px;
@@ -56,7 +56,7 @@ li {
 }
 
 a {
-    color: $blue-primary;
+    color: $color-blue-primary;
     text-decoration: none;
     transition: opacity 0.2s;
     &:hover {
@@ -65,7 +65,7 @@ a {
 }
 
 label, input {
-    color: $gray-common;
+    color: $color-gray-common;
     font-size: 20px;
 }
 
@@ -78,7 +78,7 @@ input {
 }
 
 .gray-rule {
-    background: $super-light-gray;
+    background: $color-super-light-gray;
     border: none;
     border-radius: $border-radius-common;
     height: 3px;
