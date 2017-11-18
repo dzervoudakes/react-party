@@ -9,7 +9,7 @@ app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('*.min.js', (req, res, next) => {
+app.get('*/app.min.js', (req, res, next) => {
     req.url = `${req.url}.gz`;
     res.set('Content-Encoding', 'gzip');
     res.set('Content-Type', 'text/javascript');
