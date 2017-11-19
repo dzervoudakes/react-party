@@ -3,9 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const jsonfile = require('jsonfile');
-const favicon = require('serve-favicon');
 
-app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
