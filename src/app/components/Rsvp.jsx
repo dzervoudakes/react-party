@@ -2,7 +2,6 @@ import React from 'react';
 
 const axios = require('axios');
 const handleError = require('../common/error.js');
-const path = require('../common/path.js')();
 
 export class Rsvp extends React.Component {
     constructor() {
@@ -13,11 +12,11 @@ export class Rsvp extends React.Component {
     }
 
     getAttendees() {
-        return axios.get(`${path}data/rsvp.json`);
+        return axios.get('/data/rsvp.json');
     }
 
     postAttendees(data) {
-        return axios.post(`/api/post-rsvp`, data);
+        return axios.post('/api/post-rsvp', data);
     }
 
     componentWillMount() {

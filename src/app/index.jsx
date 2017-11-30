@@ -4,10 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import { Info } from './components/Info.jsx';
-import { Faq } from './components/Faq.jsx';
-import { Rsvp } from './components/Rsvp.jsx';
-import { Header, Footer } from './components/Templates.jsx';
+import { Faq, Header, Info, Footer, Rsvp } from './components';
 require('../sass/style.scss');
 
 class PartyTime extends React.Component {

@@ -2,7 +2,6 @@ import React from 'react';
 
 const axios = require('axios');
 const handleError = require('../common/error.js');
-const path = require('../common/path.js')();
 
 export class Faq extends React.Component {
     constructor() {
@@ -12,7 +11,7 @@ export class Faq extends React.Component {
     }
 
     getFaq() {
-        return axios.get(`${path}data/faq.json`);
+        return axios.get('/data/faq.json');
     }
 
     componentWillMount() {
