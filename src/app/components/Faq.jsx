@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaqBlock } from './modules/FaqBlock.jsx';
 
 const axios = require('axios');
 const handleError = require('../common/error.js');
@@ -7,7 +8,6 @@ export class Faq extends React.Component {
     constructor() {
         super();
         this.state = { entry: 0, faqData: [] };
-        this.getFaq = this.getFaq.bind(this);
     }
 
     getFaq() {
@@ -34,13 +34,15 @@ export class Faq extends React.Component {
                 question.classList.toggle('open');
             }
         };
-
         const { faqData } = this.state;
         const faqItems = faqData.map((obj, index) =>
-            <div className="faq-block" data-entry={index} key={`faq-section-${index}`}>
-                <p className="question" onClick={() => updatePanel(index)}>{obj.question}</p>
-                <p className="answer" dangerouslySetInnerHTML={{ __html: obj.answer }} />
-            </div>
+            <FaqBlock
+                answer={obj.answer}
+                index={index}
+                key={index}
+                question={obj.question}
+                updatePanel={updatePanel}
+            />
         );
 
         return (

@@ -7,7 +7,6 @@ export class Rsvp extends React.Component {
     constructor() {
         super();
         this.state = { attendees: [], firstNameInvalid: false, lastNameInvalid: false };
-        this.getAttendees = this.getAttendees.bind(this);
         this.submitForm = this.submitForm.bind(this);
     }
 

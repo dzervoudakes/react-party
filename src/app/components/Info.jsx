@@ -7,7 +7,6 @@ export class Info extends React.Component {
     constructor() {
         super();
         this.state = { infoData: {} };
-        this.getInfo = this.getInfo.bind(this);
     }
 
     getInfo() {
