@@ -7,7 +7,6 @@
     "type": "git",
     "url": "git+ssh://git@github.com/dzervoudakes/react-party.git"
   },
-  "author": "",
   "license": "MIT",
   "homepage": "https://www.drzwebdev.com/webapps/react-party",
   "devDependencies": {
