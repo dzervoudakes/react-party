@@ -29,7 +29,7 @@ h1 {
     }
 }
 
-h3 {
+h3.title {
     color: $color-gray-common;
     @media (min-width: $breakpoint-min) {
         font-size: 26px;

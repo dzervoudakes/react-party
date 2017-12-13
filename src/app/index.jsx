@@ -4,62 +4,67 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Faq, Header, Info, Footer, Rsvp } from './components';
 require('../sass/style.scss');
 
 class PartyTime extends React.Component {
     constructor() {
         super();
-        this.state = { dialogOpen: false, errorView: 'When/Where', whenWhereView: true, faqView: false, rsvpView: false };
-        this.setErrorView = this.setErrorView.bind(this);
+        this.state = {
+            dialog: {
+                message: '',
+                open: false,
+                title: ''
+            }
+        };
         this.handleDialogClose = this.handleDialogClose.bind(this);
-        this.updatePageView = this.updatePageView.bind(this);
+        this.openDialog = this.openDialog.bind(this);
     }
-
-    updatePageView(view) {
-        return this.setState({
-            whenWhereView: view === 'whenWhereView' ? true : false,
-            faqView: view === 'faqView' ? true : false,
-            rsvpView: view === 'rsvpView' ? true : false
-        });
-    }
-
-    setErrorView(view) {
-        this.setState({ dialogOpen: true, errorView: view });
-    };
 
     handleDialogClose() {
-        this.setState({ dialogOpen: false });
+        const opts = { message: '', open: false, title: '' };
+        this.setState({ dialog: opts });
+    }
+
+    openDialog(opts) {
+        opts.open = true;
+        this.setState({ dialog: opts });
     }
 
     render() {
-        const { errorView:e, whenWhereView:w, faqView:f, rsvpView:r } = this.state;
-        const active = {
-            whenWhereView: w,
-            faqView: f,
-            rsvpView: r
-        };
-
+        const { message, open, title } = this.state.dialog;
         const actions = [
             <FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
         ];
-
         return (
-            <div className="wrapper">
-                <Header active={active} show={this.updatePageView} />
-                <div className="panel">
-                    <Info active={active.whenWhereView} setErrorView={this.setErrorView} />
-                    <Faq active={active.faqView} setErrorView={this.setErrorView} />
-                    <Rsvp active={active.rsvpView} setErrorView={this.setErrorView} />
+            <BrowserRouter basename="/">
+                <div className="wrapper">
+                    <Header />
+                    <div className="panel">
+                        <Switch>
+                            <Route exact path="/">
+                                <Info openDialog={this.openDialog} />
+                            </Route>
+                            <Route path="/faq">
+                                <Faq openDialog={this.openDialog} />
+                            </Route>
+                            <Route path="/rsvp">
+                                <Rsvp openDialog={this.openDialog} />
+                            </Route>
+                        </Switch>
+                    </div>
+                    <Dialog
+                        actions={actions}
+                        onRequestClose={this.handleDialogClose}
+                        open={open}
+                        title={title}
+                    >
+                        {message}
+                    </Dialog>
+                    <Footer />
                 </div>
-                <Dialog
-                    actions={actions}
-                    onRequestClose={this.handleDialogClose}
-                    open={this.state.dialogOpen}
-                    title={`Ay yo, Tyson... Something went wrong when trying to grab the '${e}' data. You should talk to Daaan Zeee and get him to fix it for you.`}
-                />
-                <Footer />
-            </div>
+            </BrowserRouter>
         );
     }
 }

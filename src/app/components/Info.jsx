@@ -1,7 +1,6 @@
 import React from 'react';
 
 const axios = require('axios');
-const handleError = require('../common/error.js');
 
 export class Info extends React.Component {
     constructor() {
@@ -10,15 +9,17 @@ export class Info extends React.Component {
     }
 
     getInfo() {
-        return axios.get('/data/info.json');
+        return axios.get('/api/get?data=info');
     }
 
     componentWillMount() {
-        const { setErrorView } = this.props;
-        return this.getInfo().then(resp => this.setState({ infoData: resp.data })).catch(err => {
-            setErrorView('When/Where');
-            handleError(this);
-        });
+        const { openDialog } = this.props;
+        return this.getInfo()
+            .then(resp => this.setState({ infoData: resp.data }))
+            .catch(err => {
+                const opts = { message: 'There was an error getting the when/where info.', title: 'Lame...' };
+                openDialog(opts);
+            });
     }
     
     render() {
@@ -27,10 +28,9 @@ export class Info extends React.Component {
         const listItems = keys.map(key =>
             <li key={key}><span className="t-heavy">{key}:</span> <span dangerouslySetInnerHTML={{ __html: infoData[key] }} /></li>
         );
-
         return (
-            <div id="whenWhere" className={'content-container when-where' + (this.props.active ? '' : ' hidden')}>
-                <h3>When/Where</h3>
+            <div id="whenWhere" className="content-container when-where">
+                <h3 className="title">When/Where</h3>
                 <hr className="gray-rule" />
                 <ul className="when-where-list">{listItems}</ul>
             </div>

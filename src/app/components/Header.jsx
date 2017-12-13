@@ -1,7 +1,6 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
-import FlatButton from 'material-ui/FlatButton';
-import MenuItem from 'material-ui/MenuItem';
+import { MenuListItem } from './modules/MenuListItem.jsx';
 
 export class Header extends React.Component {
     constructor() {
@@ -15,30 +14,14 @@ export class Header extends React.Component {
     }
 
     render() {
-        const { active, show } = this.props;
-        const createButton = (view, label) => {
-            const labelOpts = { color: '#fff', fontSize: '16px', opacity: active[view] ? '0.5' : '1', textTransform: 'none' };
-            return <FlatButton
-                disabled={active[view]}
-                label={label}
-                labelStyle={labelOpts}
-                onClick={() => show(view)}
-                secondary={true}
-            />
-        };
-
-        const createMenuItem = (view, label) => {
-            return <MenuItem onClick={() => { show(view); this.setMenuState(); }}>{label}</MenuItem>;
-        }
-        
         return (
             <header className="header">
                 <div className="gray-bar">
                     <p className="t-brand">Party At Tyson's</p>
                     <div className="button-bar phone-hidden">
-                        {createButton('whenWhereView', 'When/Where')}
-                        {createButton('faqView', 'FAQ')}
-                        {createButton('rsvpView', 'RSVP')}
+                        <MenuListItem label="When/Where" flat={true} />
+                        <MenuListItem path="faq" label="FAQ" flat={true} />
+                        <MenuListItem path="rsvp" label="RSVP" flat={true} />
                     </div>
                     <div className="cheeseburger-button phone-visible" onClick={() => this.setMenuState(true)}>
                         <div className="bar"></div>
@@ -53,9 +36,9 @@ export class Header extends React.Component {
                         onRequestChange={() => this.setMenuState()}
                         width={200}
                     >
-                        {createMenuItem('whenWhereView', 'When/Where')}
-                        {createMenuItem('faqView', 'FAQ')}
-                        {createMenuItem('rsvpView', 'RSVP')}
+                        <MenuListItem label="When/Where" onClick={this.setMenuState} />
+                        <MenuListItem path="faq" label="FAQ" onClick={this.setMenuState} />
+                        <MenuListItem path="rsvp" label="RSVP" onClick={this.setMenuState} />
                     </Drawer>
                 </div>
                 <div className="banner">
@@ -63,16 +46,6 @@ export class Header extends React.Component {
                     <h2>OMG OMG OMG OMG</h2>
                 </div>
             </header>
-        );
-    }
-}
-
-export class Footer extends React.Component {
-    render() {
-        return (
-            <footer className="footer">
-                <p className="t-copyright">Copyright &copy; tynick {new Date().getFullYear()}</p>
-            </footer>
         );
     }
 }

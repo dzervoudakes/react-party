@@ -11,6 +11,7 @@ While I posted the link to the beta on my web server, my buddy actively manages 
 * React
 * ES6 + Babel
 * Webpack
+* React-router-dom
 * Material-ui
 * Axios
 * SASS
