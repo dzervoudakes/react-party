@@ -73,11 +73,11 @@ export class Rsvp extends React.Component {
                 <p>Because you know you want to come to the party, and the courteous thing to do would be to let the organizer know your intentions.</p>       
                 <form className="rsvp-form">
                     <div className="form-input-container left">
-                        <label>First Name:</label>
+                        <label htmlFor="firstName">First Name:</label>
                         <input id="firstName" className={firstNameInvalid ? 'invalid' : ''} name="firstName" type="text" />
                     </div>
                     <div className="form-input-container right">
-                        <label>Last Name:</label>
+                        <label htmlFor="lastName">Last Name:</label>
                         <input id="lastName" className={lastNameInvalid ? 'invalid' : ''} name="lastName" type="text" />
                     </div>
                     <input className="submit-button" type="submit" onClick={this.submitForm} value="Reserve My Spot" />
