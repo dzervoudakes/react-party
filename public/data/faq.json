@@ -1,108 +1,106 @@
-{
-    "questions": [
-        {
-            "question": "I'm weird and don't know how to party. What is a party?",
-            "answer": "Yes, you are weird. Click the following link to see what a <a href='https://en.wikipedia.org/wiki/Party'>party</a> is."
-        },
-        {
-            "question": "Why are you having a party?",
-            "answer": "I like to party."
-        },
-        {
-            "question": "I know you like to party but is there a reason you chose this date?",
-            "answer": "Floyd Mayweather vs Conor McGregor."
-        },
-        {
-            "question": "Who is going to win?",
-            "answer": "Floyd Mayweather."
-        },
-        {
-            "question": "I'm not very smart and I think Conor McGregor is going to win. Will you bet me?",
-            "answer": "Yes."
-        },
-        {
-            "question": "Will there be food provided?",
-            "answer": "Yes."
-        },
-        {
-            "question": "What are you preparing?",
-            "answer": "Smoked rib and weengs."
-        },
-        {
-            "question": "I heard that ribs take a long time to smoke. Can I show up earlier to hang out and help while you spend 7 hours prepping and smoking the ribs?",
-            "answer": "You are more than welcome to come hangout while I am smoking the ribs."
-        },
-        {
-            "question": "What time will you start smoking the ribs?",
-            "answer": "I'll be throwing the ribs on the smoker at noon."
-        },
-        {
-            "question": "What happens if I come over at noon to hang out and I get hungry before the ribs are done?",
-            "answer": "Appetizer burgers will happen at 2pm."
-        },
-        {
-            "question": "Wow. It sounds like you have it all planned out. Sure is nice of you to pay for all of that food. Will you pay for the PPV too?",
-            "answer": "Sure."
-        },
-        {
-            "question": "Can I chip in at all for the PPV?",
-            "answer": "Sure."
-        },
-        {
-            "question": "Can I write you a check?",
-            "answer": "No. It is 2017. Idiot."
-        },
-        {
-            "question": "How would you like me to give you a donation?",
-            "answer": "I dont care. Cash or Venmo. (@tynick)"
-        },
-        {
-            "question": "Do I need to give you any money?",
-            "answer": "No."
-        },
-        {
-            "question": "Can I bring anything in terms of food/drink?",
-            "answer": "Tequila."
-        },
-        {
-            "question": "Is there anything else?",
-            "answer": "Chips, soda or anything that isnt meat. I'll take care of the meat."
-        },
-        {
-            "question": "Can I bring dessert?",
-            "answer": "No. Janice is bringing dessert."
-        },
-        {
-            "question": "Do you have any beer?",
-            "answer": "I have a case of Coors Light and some craft beer that people have left at past parties."
-        },
-        {
-            "question": "Can I drink those?",
-            "answer": "I don't care."
-        },
-        {
-            "question": "I plan to get super drunk. Can I stay at your place?",
-            "answer": "Yes, please do. We should have plenty of room for sleeping."
-        },
-        {
-            "question": "Can I chat with people at the party about things I may have seen or done earlier in the week??",
-            "answer": "Not if they involve the sun or glasses that you use to look at the sun."
-        },
-        {
-            "question": "Will there be any other activities?",
-            "answer": "We have ping pong, loud rap music and booze."
-        },
-        {
-            "question": "You play ping pong?",
-            "answer": "Yes. I am probably better than you."
-        },
-        {
-            "question": "Can I bring my girlfriend or boyfriend?",
-            "answer": "As long as he or she isn't a horrible person, sure. The more the merrier."
-        },
-        {
-            "question": "Can I bring my dog?",
-            "answer": "I don't care."
-        }
-    ]
-}
+[
+    {
+        "question": "I'm weird and don't know how to party. What is a party?",
+        "answer": "Yes, you are weird. Click the following link to see what a <a href='https://en.wikipedia.org/wiki/Party'>party</a> is."
+    },
+    {
+        "question": "Why are you having a party?",
+        "answer": "I like to party."
+    },
+    {
+        "question": "I know you like to party but is there a reason you chose this date?",
+        "answer": "Floyd Mayweather vs Conor McGregor."
+    },
+    {
+        "question": "Who is going to win?",
+        "answer": "Floyd Mayweather."
+    },
+    {
+        "question": "I'm not very smart and I think Conor McGregor is going to win. Will you bet me?",
+        "answer": "Yes."
+    },
+    {
+        "question": "Will there be food provided?",
+        "answer": "Yes."
+    },
+    {
+        "question": "What are you preparing?",
+        "answer": "Smoked ribs and weengs."
+    },
+    {
+        "question": "I heard that ribs take a long time to smoke. Can I show up earlier to hang out and help while you spend 7 hours prepping and smoking the ribs?",
+        "answer": "You are more than welcome to come hangout while I am smoking the ribs."
+    },
+    {
+        "question": "What time will you start smoking the ribs?",
+        "answer": "I'll be throwing the ribs on the smoker at noon."
+    },
+    {
+        "question": "What happens if I come over at noon to hang out and I get hungry before the ribs are done?",
+        "answer": "Appetizer burgers will happen at 2pm."
+    },
+    {
+        "question": "Wow. It sounds like you have it all planned out. Sure is nice of you to pay for all of that food. Will you pay for the PPV too?",
+        "answer": "Sure."
+    },
+    {
+        "question": "Can I chip in at all for the PPV?",
+        "answer": "Sure."
+    },
+    {
+        "question": "Can I write you a check?",
+        "answer": "No. It is 2017. Idiot."
+    },
+    {
+        "question": "How would you like me to give you a donation?",
+        "answer": "I dont care. Cash or Venmo. (@tynick)"
+    },
+    {
+        "question": "Do I need to give you any money?",
+        "answer": "No."
+    },
+    {
+        "question": "Can I bring anything in terms of food/drink?",
+        "answer": "Tequila."
+    },
+    {
+        "question": "Is there anything else?",
+        "answer": "Chips, soda or anything that isnt meat. I'll take care of the meat."
+    },
+    {
+        "question": "Can I bring dessert?",
+        "answer": "No. Janice is bringing dessert."
+    },
+    {
+        "question": "Do you have any beer?",
+        "answer": "I have a case of Coors Light and some craft beer that people have left at past parties."
+    },
+    {
+        "question": "Can I drink those?",
+        "answer": "I don't care."
+    },
+    {
+        "question": "I plan to get super drunk. Can I stay at your place?",
+        "answer": "Yes, please do. We should have plenty of room for sleeping."
+    },
+    {
+        "question": "Can I chat with people at the party about things I may have seen or done earlier in the week??",
+        "answer": "Not if they involve the sun or glasses that you use to look at the sun."
+    },
+    {
+        "question": "Will there be any other activities?",
+        "answer": "We have ping pong, loud rap music and booze."
+    },
+    {
+        "question": "You play ping pong?",
+        "answer": "Yes. I am probably better than you."
+    },
+    {
+        "question": "Can I bring my girlfriend or boyfriend?",
+        "answer": "As long as he or she isn't a horrible person, sure. The more the merrier."
+    },
+    {
+        "question": "Can I bring my dog?",
+        "answer": "I don't care."
+    }
+]

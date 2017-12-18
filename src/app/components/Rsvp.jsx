@@ -1,6 +1,7 @@
 import React from 'react';
 
-const axios = require('axios');
+const RsvpAction = require('../actions/RsvpAction.js');
+const RsvpStore = require('../stores/RsvpStore.js');
 
 export class Rsvp extends React.Component {
     constructor() {
@@ -9,23 +10,18 @@ export class Rsvp extends React.Component {
         this.submitForm = this.submitForm.bind(this);
     }
 
-    getAttendees() {
-        return axios.get('/api/get?data=rsvp');
-    }
-
-    postAttendees(data) {
-        return axios.post('/api/rsvp', data);
-    }
-
     componentWillMount() {
         const { openDialog } = this.props;
-        return this.getAttendees()
-            .then(resp => {
-                if (resp.data.length) this.setState({ attendees: resp.data });
-            }).catch(err => {
-                const opts = { message: 'There was an error getting the current attendees.', title: 'Oh no!' };
-                openDialog(opts);
-            });
+        const failure = () => {
+            const opts = { message: 'There was an error getting the current attendees.', title: 'Oh no!' };
+            openDialog(opts);
+        };
+        const changeHandler = () => {
+            const { attendees } = RsvpStore;
+            this.setState({ attendees: attendees });
+        };
+        RsvpStore.on('change-get', changeHandler);
+        RsvpAction.getRsvp(failure);
     }
 
     submitForm(e) {
@@ -41,17 +37,19 @@ export class Rsvp extends React.Component {
             };
             attendees.push(newAttendee);
             const data = { attendees: attendees };
-            this.postAttendees(data)
-                .then(resp => {
-                    document.getElementById('firstName').value = '';
-                    document.getElementById('lastName').value = '';
-                    this.setState({ attendees: attendees, firstNameInvalid: false, lastNameInvalid: false });
-                    const opts = { message: 'Congratulations, your RSVP was successful. See you at the party!', title: 'Awww yeah!' };
-                    openDialog(opts);
-                }).catch(err => {
-                    const opts = { message: 'There was a problem submitting the form.', title: ':sadface:' };
-                    openDialog(opts);
-                });
+            const failure = () => {
+                const opts = { message: 'There was a problem submitting the form.', title: ':sadface:' };
+                openDialog(opts);
+            };
+            const changeHandler = () => {
+                document.getElementById('firstName').value = '';
+                document.getElementById('lastName').value = '';
+                this.setState({ attendees: attendees, firstNameInvalid: false, lastNameInvalid: false });
+                const opts = { message: 'Congratulations, your RSVP was successful. See you at the party!', title: 'Awww yeah!' };
+                openDialog(opts);
+            };
+            RsvpStore.on('change-post', changeHandler);
+            RsvpAction.postRsvp(data, failure);
         } else {
             this.setState({
                 firstNameInvalid: firstName.length === 0 ? true : false,

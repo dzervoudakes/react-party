@@ -1,27 +1,28 @@
 import React from 'react';
 import { FaqBlock } from './modules/FaqBlock.jsx';
 
-const axios = require('axios');
+const FaqAction = require('../actions/FaqAction.js');
+const FaqStore = require('../stores/FaqStore.js');
 
 export class Faq extends React.Component {
     constructor() {
         super();
-        this.state = { entry: 0, faqData: [] };
+        this.state = { entry: 0, faq: [] };
         this.updatePanel = this.updatePanel.bind(this);
-    }
-
-    getFaq() {
-        return axios.get('/api/get?data=faq');
     }
 
     componentWillMount() {
         const { openDialog } = this.props;
-        return this.getFaq()
-            .then(resp => this.setState({ faqData: resp.data.questions }))
-            .catch(err => {
-                const opts = { message: 'There was an error getting the FAQ data.', title: 'D\'oh!' };
-                openDialog(opts);
-            });
+        const failure = () => {
+            const opts = { message: 'There was an error getting the FAQ data.', title: 'D\'oh!' };
+            openDialog(opts);
+        };
+        const changeHandler = () => {
+            const { faq } = FaqStore;
+            this.setState({ faq: faq });
+        };
+        FaqStore.on('change', changeHandler);
+        FaqAction.getFaq(failure);
     }
 
     updatePanel(entry) {
@@ -36,8 +37,8 @@ export class Faq extends React.Component {
     };
 
     render() {
-        const { faqData } = this.state;
-        const faqItems = faqData.map((obj, index) =>
+        const { faq } = this.state;
+        const faqItems = faq.map((obj, index) =>
             <FaqBlock
                 answer={obj.answer}
                 index={index}
