@@ -1,10 +1,13 @@
 const express = require('express');
-const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonfile = require('jsonfile');
 
+const router = express.Router();
+
 router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.urlencoded({ extended: true }));
+
+// @TODO: SEPARATE THE FOLLOWING METHODS AND USE SOMETHING MORE DESCRIPTIVE THAN 'GET'
 
 router.get('/get', (req, res) => {
     const query = req.query.data;
