@@ -1,7 +1,7 @@
 # react-party
 Rebuilt my buddy's party website with React.
 
-While I posted the link to the beta on my web server, my buddy actively manages the actual site at http://party.tynick.com
+While I posted the link to the beta on my web server, my buddy actively manages the actual site at http://party.tynick.com.
 
 **Disclaimer:** I am not responsible for any content (including foul language) which he may decide to post.
 
