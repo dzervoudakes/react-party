@@ -8,7 +8,6 @@
     "url": "git+ssh://git@github.com/dzervoudakes/react-party.git"
   },
   "license": "MIT",
-  "homepage": "https://www.drzwebdev.com/webapps/react-party",
   "devDependencies": {
     "axios": "^0.16.2",
     "babel-core": "^6.26.0",
