@@ -6,7 +6,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Faq, Header, Info, Footer, Rsvp } from './components';
-require('../sass/style.scss');
+import '../sass/style.scss';
 
 class PartyTime extends React.Component {
 	constructor() {
