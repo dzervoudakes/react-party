@@ -7,13 +7,6 @@ const port = process.env.port || 8080;
 
 global.__dirname = __dirname;
 
-app.get('*/app.min.js', (req, res, next) => {
-    req.url = `${req.url}.gz`;
-    res.set('Content-Encoding', 'gzip');
-    res.set('Content-Type', 'text/javascript');
-    next();
-});
-
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get(['/', '/faq', '/rsvp'], (req, res) => {
