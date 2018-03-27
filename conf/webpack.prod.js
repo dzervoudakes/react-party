@@ -80,7 +80,7 @@ module.exports = merge(common, {
 		new CompressionPlugin({
 			asset: '[path].gz[query]',
 			algorithm: 'gzip',
-			test: /\.min.js$/,
+			test: /\.(min.js|min.css)$/,
 			minRatio: 0.8
 		})
 	],

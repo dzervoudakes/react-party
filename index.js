@@ -14,6 +14,13 @@ app.get('*.min.js', (req, res, next) => {
 	next();
 });
 
+app.get('*.min.css', (req, res, next) => {
+	req.url = `${req.url}.gz`;
+	res.set('Content-Encoding', 'gzip');
+	res.set('Content-Type', 'text/css');
+	next();
+});
+
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get(['/', '/faq', '/rsvp'], (req, res) => {
