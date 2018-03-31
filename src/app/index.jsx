@@ -4,11 +4,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Faq, Header, Info, Footer, Rsvp } from './components';
-import '../sass/style.scss';
+import { BrowserRouter } from 'react-router-dom';
+import { Header, Footer, Routes } from './components';
+import '../sass/style';
 
-class PartyTime extends React.Component {
+class Main extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -42,17 +42,7 @@ class PartyTime extends React.Component {
 				<div className="wrapper">
 					<Header />
 					<div className="panel">
-						<Switch>
-							<Route exact path="/">
-								<Info openDialog={this.openDialog} />
-							</Route>
-							<Route path="/faq">
-								<Faq openDialog={this.openDialog} />
-							</Route>
-							<Route path="/rsvp">
-								<Rsvp openDialog={this.openDialog} />
-							</Route>
-						</Switch>
+						<Routes openDialog={this.openDialog} />
 					</div>
 					<Dialog
 						actions={actions}
@@ -81,13 +71,11 @@ const partyTheme = {
 	}
 };
 
-const App = () => {
-	return (
-		<MuiThemeProvider muiTheme={getMuiTheme(partyTheme)}>
-			<PartyTime />
-		</MuiThemeProvider>
-	);
-};
+const App = () => (
+	<MuiThemeProvider muiTheme={getMuiTheme(partyTheme)}>
+		<Main />
+	</MuiThemeProvider>
+);
 
 ReactDOM.render(
 	<App />,

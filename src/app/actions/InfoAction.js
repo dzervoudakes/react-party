@@ -1,4 +1,4 @@
-const AppDispatcher = require('../dispatcher/AppDispatcher.js');
+const AppDispatcher = require('@/dispatcher/AppDispatcher.js');
 const axios = require('axios');
 
 const getInfo = () => {

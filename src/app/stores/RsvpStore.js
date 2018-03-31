@@ -1,4 +1,4 @@
-const AppDispatcher = require('../dispatcher/AppDispatcher.js');
+const AppDispatcher = require('@/dispatcher/AppDispatcher.js');
 const EventEmitter = require('events').EventEmitter;
 
 const RsvpStore = Object.assign({}, EventEmitter.prototype, {

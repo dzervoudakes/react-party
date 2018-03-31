@@ -1,13 +1,16 @@
-import { Faq } from './Faq.jsx';
-import { Info } from './Info.jsx';
-import { Rsvp } from './Rsvp.jsx';
-import { Header } from './Header.jsx';
-import { Footer } from './Footer.jsx';
+import Faq from './faq';
+import Info from './info';
+import Rsvp from './rsvp';
+import Header from './header';
+import Footer from './footer';
+import Routes, { MenuListItem } from './common';
 
 export {
     Faq,
     Header,
     Info,
     Footer,
-    Rsvp
+	Rsvp,
+	Routes,
+	MenuListItem
 };
