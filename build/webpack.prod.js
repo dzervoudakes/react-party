@@ -65,7 +65,8 @@ module.exports = merge(common, {
 		new CopyWebpackPlugin([
 			{ from: `${ROOT_DIR}/index.js`, to: `${BUILD_DIR}/index.js` },
 			{ from: `${ROOT_DIR}/routes/`, to: `${BUILD_DIR}/routes/` },
-			{ from: `${PUBLIC_DIR}/404.html`, to: `${BUILD_DIR}/public/404.html` }
+			{ from: `${PUBLIC_DIR}/404.html`, to: `${BUILD_DIR}/public/404.html` },
+			{ from: `${PUBLIC_DIR}/data/`, to: `${BUILD_DIR}/public/data/` }
 		]),
 		new HtmlWebpackPlugin({
 			favicon: `${PUBLIC_DIR}/favicon.ico`,

@@ -6,7 +6,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import { BrowserRouter } from 'react-router-dom';
 import { Header, Footer, Routes } from './components';
-import '../sass/style';
+import './sass/style';
 
 class Main extends React.Component {
 	constructor() {
