@@ -19,6 +19,9 @@ module.exports = merge(common, {
 			title: 'Party!'
 		})
 	],
+	watchOptions: {
+		ignored: [BUILD_DIR]
+	},
 	output: {
 		path: BUILD_DIR,
 		filename: 'js/app.js'
