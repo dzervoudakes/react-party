@@ -11,7 +11,7 @@ const ROOT_DIR = path.resolve(__dirname, '../');
 module.exports = merge(common, {
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('production')
+			'process.env.NODE_ENV': JSON.stringify('development')
 		}),
 		new ExtractTextPlugin('css/styles.css', {
 			allChunks: true
