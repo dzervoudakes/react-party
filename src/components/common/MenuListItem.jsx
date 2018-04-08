@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FlatButton from 'material-ui/FlatButton';
 import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router-dom';
 
 class MenuListItem extends React.PureComponent {
     render() {
-        const { path = '', label, flat = false, onClick } = this.props;
+        const { path = '', label, flat = false, onClick = null } = this.props;
         if (flat) {
             const labelOpts = { color: '#fff', fontSize: '16px', textTransform: 'none' };
             return (
@@ -20,11 +21,22 @@ class MenuListItem extends React.PureComponent {
         } else {
             return (
                 <Link to={`/${path}`}>
-                    <MenuItem onClick={() => onClick()}>{label}</MenuItem>
+					{
+						onClick !== null ?
+						<MenuItem onClick={() => onClick()}>{label}</MenuItem> :
+						<MenuItem>{label}</MenuItem>
+					}
                 </Link>
             );
         }
     }
 }
+
+MenuListItem.propTypes = {
+	label: PropTypes.string.isRequired,
+	onClick: PropTypes.func,
+	path: PropTypes.string,
+	flat: PropTypes.bool
+};
 
 export default MenuListItem;

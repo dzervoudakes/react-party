@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const InfoAction = require('@/actions/InfoAction.js');
 const InfoStore = require('@/stores/InfoStore.js');
@@ -38,5 +39,9 @@ class Info extends React.Component {
         );
     }
 }
+
+Info.propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
 
 export default Info;

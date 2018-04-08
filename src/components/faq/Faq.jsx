@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FaqBlock from './FaqBlock';
 
 const FaqAction = require('@/actions/FaqAction.js');
@@ -56,5 +57,9 @@ class Faq extends React.Component {
         );
     }
 }
+
+Faq.propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
 
 export default Faq;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 	<form className="rsvp-form">
@@ -13,5 +14,11 @@ const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 		<input className="submit-button" type="submit" onClick={submitForm} value="Reserve My Spot" />
 	</form>
 );
+
+RsvpForm.propTypes = {
+	firstNameInvalid: PropTypes.bool.isRequired,
+	lastNameInvalid: PropTypes.bool.isRequired,
+	submitForm: PropTypes.func.isRequired
+};
 
 export default RsvpForm;

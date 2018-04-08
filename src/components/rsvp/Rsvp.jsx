@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RsvpForm from './RsvpForm';
 
 const RsvpAction = require('@/actions/RsvpAction.js');
@@ -82,5 +83,9 @@ class Rsvp extends React.Component {
         );
     }
 }
+
+Rsvp.propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
 
 export default Rsvp;
