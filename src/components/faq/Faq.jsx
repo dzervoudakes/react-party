@@ -5,6 +5,10 @@ import FaqBlock from './FaqBlock';
 const FaqAction = require('@/actions/FaqAction.js');
 const FaqStore = require('@/stores/FaqStore.js');
 
+const propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
+
 class Faq extends React.Component {
     constructor() {
         super();
@@ -26,6 +30,7 @@ class Faq extends React.Component {
         FaqAction.getFaq(failure);
     }
 
+	// @TODO: REFACTOR...
     updatePanel(entry) {
         const openContainer = document.querySelector('.faq-block.open');
         const question = document.querySelector(`.faq-block[data-entry="${entry}"]`);
@@ -58,8 +63,6 @@ class Faq extends React.Component {
     }
 }
 
-Faq.propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+Faq.propTypes = propTypes;
 
 export default Faq;

@@ -4,6 +4,13 @@ import FlatButton from 'material-ui/FlatButton';
 import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router-dom';
 
+const propTypes = {
+	label: PropTypes.string.isRequired,
+	onClick: PropTypes.func,
+	path: PropTypes.string,
+	flat: PropTypes.bool
+};
+
 class MenuListItem extends React.PureComponent {
     render() {
         const { path = '', label, flat = false, onClick = null } = this.props;
@@ -32,11 +39,6 @@ class MenuListItem extends React.PureComponent {
     }
 }
 
-MenuListItem.propTypes = {
-	label: PropTypes.string.isRequired,
-	onClick: PropTypes.func,
-	path: PropTypes.string,
-	flat: PropTypes.bool
-};
+MenuListItem.propTypes = propTypes;
 
 export default MenuListItem;

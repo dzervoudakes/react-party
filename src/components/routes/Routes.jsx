@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { Info, Faq, Rsvp } from '@/components';
 
+// @TODO: REMOVE THE NEED TO PASS PROPS INTO THIS COMPONENT
+
+const propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
+
 const Routes = ({ openDialog }) => (
 	<Switch>
 		<Route exact path="/">
@@ -17,8 +23,6 @@ const Routes = ({ openDialog }) => (
 	</Switch>
 );
 
-Routes.propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+Routes.propTypes = propTypes;
 
 export default Routes;

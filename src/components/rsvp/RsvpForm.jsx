@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+	firstNameInvalid: PropTypes.bool.isRequired,
+	lastNameInvalid: PropTypes.bool.isRequired,
+	submitForm: PropTypes.func.isRequired
+};
+
 const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 	<form className="rsvp-form">
 		<div className="form-input-container left">
@@ -15,10 +21,6 @@ const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 	</form>
 );
 
-RsvpForm.propTypes = {
-	firstNameInvalid: PropTypes.bool.isRequired,
-	lastNameInvalid: PropTypes.bool.isRequired,
-	submitForm: PropTypes.func.isRequired
-};
+RsvpForm.propTypes = propTypes;
 
 export default RsvpForm;

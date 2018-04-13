@@ -18,11 +18,11 @@ class Main extends React.Component {
 				title: ''
 			}
 		};
-		this.handleDialogClose = this.handleDialogClose.bind(this);
+		this.closeDialog = this.closeDialog.bind(this);
 		this.openDialog = this.openDialog.bind(this);
 	}
 
-	handleDialogClose() {
+	closeDialog() {
 		const opts = { message: '', open: false, title: '' };
 		this.setState({ dialog: opts });
 	}
@@ -35,7 +35,7 @@ class Main extends React.Component {
 	render() {
 		const { message, open, title } = this.state.dialog;
 		const actions = [
-			<FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
+			<FlatButton label="Close" onClick={this.closeDialog} primary={true} />
 		];
 		return (
 			<BrowserRouter basename="/">
@@ -46,7 +46,7 @@ class Main extends React.Component {
 					</div>
 					<Dialog
 						actions={actions}
-						onRequestClose={this.handleDialogClose}
+						onRequestClose={this.closeDialog}
 						open={open}
 						title={title}
 					>

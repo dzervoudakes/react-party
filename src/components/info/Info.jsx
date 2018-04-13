@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 const InfoAction = require('@/actions/InfoAction.js');
 const InfoStore = require('@/stores/InfoStore.js');
 
+const propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
+
 class Info extends React.Component {
     constructor() {
         super();
@@ -40,8 +44,6 @@ class Info extends React.Component {
     }
 }
 
-Info.propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+Info.propTypes = propTypes;
 
 export default Info;

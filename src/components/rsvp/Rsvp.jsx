@@ -5,6 +5,10 @@ import RsvpForm from './RsvpForm';
 const RsvpAction = require('@/actions/RsvpAction.js');
 const RsvpStore = require('@/stores/RsvpStore.js');
 
+const propTypes = {
+	openDialog: PropTypes.func.isRequired
+};
+
 class Rsvp extends React.Component {
     constructor() {
         super();
@@ -26,6 +30,7 @@ class Rsvp extends React.Component {
         RsvpAction.getRsvp(failure);
     }
 
+	// @TODO: MOVE THIS INTO A UTIL OF SOME SORT AND MAKE IT LESS CUMBERSOME
     submitForm(e) {
         e.preventDefault();
         const { openDialog } = this.props;
@@ -84,8 +89,6 @@ class Rsvp extends React.Component {
     }
 }
 
-Rsvp.propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+Rsvp.propTypes = propTypes;
 
 export default Rsvp;

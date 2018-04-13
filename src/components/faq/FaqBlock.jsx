@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+	answer: PropTypes.string.isRequired,
+	index: PropTypes.number.isRequired,
+	question: PropTypes.string.isRequired,
+	updatePanel: PropTypes.func.isRequired
+};
+
 const FaqBlock = ({ answer, index, question, updatePanel }) => (
 	<div className="faq-block" data-entry={index}>
 		<p className="question" onClick={() => updatePanel(index)}>{question}</p>
@@ -8,11 +15,6 @@ const FaqBlock = ({ answer, index, question, updatePanel }) => (
 	</div>
 );
 
-FaqBlock.propTypes = {
-	answer: PropTypes.string.isRequired,
-	index: PropTypes.number.isRequired,
-	question: PropTypes.string.isRequired,
-	updatePanel: PropTypes.func.isRequired
-};
+FaqBlock.propTypes = propTypes;
 
 export default FaqBlock;
