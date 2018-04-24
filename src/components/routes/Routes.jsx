@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import Info from '@/components/info';
-import FaqContainer from '@/components/faq';
-import Rsvp from '@/components/rsvp';
+import Info from '../info';
+import FaqContainer from '../faq';
+import Rsvp from '../rsvp';
 
 // @TODO: REMOVE THE NEED TO PASS PROPS INTO THIS COMPONENT
 
