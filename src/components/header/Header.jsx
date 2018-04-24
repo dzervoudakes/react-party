@@ -1,6 +1,6 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
-import { MenuListItem } from '@/components/common';
+import { MenuListItem } from '../common';
 
 class Header extends React.Component {
     constructor() {
@@ -14,6 +14,7 @@ class Header extends React.Component {
     }
 
 	// @TODO: CONDENSE THIS FURTHER...
+	
     render() {
         return (
             <header className="header">
