@@ -16,16 +16,14 @@ class App extends React.Component {
 				title: ''
 			}
 		};
-		this.closeDialog = this.closeDialog.bind(this);
-		this.openDialog = this.openDialog.bind(this);
 	}
 
-	closeDialog() {
+	closeDialog = () => {
 		const opts = { message: '', open: false, title: '' };
 		this.setState({ dialog: opts });
 	}
 
-	openDialog(opts) {
+	openDialog = opts => {
 		opts.open = true;
 		this.setState({ dialog: opts });
 	}
