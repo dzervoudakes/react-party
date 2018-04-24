@@ -2,62 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import { BrowserRouter } from 'react-router-dom';
-import { Header, Footer, Routes } from './components';
+import App from './components';
 import './sass/style';
-
-class Main extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			dialog: {
-				message: '',
-				open: false,
-				title: ''
-			}
-		};
-		this.closeDialog = this.closeDialog.bind(this);
-		this.openDialog = this.openDialog.bind(this);
-	}
-
-	closeDialog() {
-		const opts = { message: '', open: false, title: '' };
-		this.setState({ dialog: opts });
-	}
-
-	openDialog(opts) {
-		opts.open = true;
-		this.setState({ dialog: opts });
-	}
-
-	render() {
-		const { message, open, title } = this.state.dialog;
-		const actions = [
-			<FlatButton label="Close" onClick={this.closeDialog} primary={true} />
-		];
-		return (
-			<BrowserRouter basename="/">
-				<div className="wrapper">
-					<Header />
-					<div className="panel">
-						<Routes openDialog={this.openDialog} />
-					</div>
-					<Dialog
-						actions={actions}
-						onRequestClose={this.closeDialog}
-						open={open}
-						title={title}
-					>
-						{message}
-					</Dialog>
-					<Footer />
-				</div>
-			</BrowserRouter>
-		);
-	}
-}
 
 // Blue: #007bff
 // Dark Gray: #343a40
@@ -71,13 +17,13 @@ const partyTheme = {
 	}
 };
 
-const App = () => (
+const Main = () => (
 	<MuiThemeProvider muiTheme={getMuiTheme(partyTheme)}>
-		<Main />
+		<App />
 	</MuiThemeProvider>
 );
 
 ReactDOM.render(
-	<App />,
+	<Main />,
 	document.getElementById('app')
 );

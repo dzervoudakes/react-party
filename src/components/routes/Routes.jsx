@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import { Info, Faq, Rsvp } from '@/components';
+import Info from '@/components/info';
+import FaqContainer from '@/components/faq';
+import Rsvp from '@/components/rsvp';
 
 // @TODO: REMOVE THE NEED TO PASS PROPS INTO THIS COMPONENT
 
@@ -15,7 +17,7 @@ const Routes = ({ openDialog }) => (
 			<Info openDialog={openDialog} />
 		</Route>
 		<Route path="/faq">
-			<Faq openDialog={openDialog} />
+			<FaqContainer openDialog={openDialog} />
 		</Route>
 		<Route path="/rsvp">
 			<Rsvp openDialog={openDialog} />
