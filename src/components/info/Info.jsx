@@ -17,12 +17,15 @@ class Info extends React.Component {
     componentWillMount() {
         const { openDialog } = this.props;
         const failure = () => {
-            const opts = { message: 'There was an error getting the when/where info.', title: 'Lame...' };
+            const opts = {
+				message: 'There was an error getting the when/where info.',
+				title: 'Lame...'
+			};
             openDialog(opts);
         };
         const changeHandler = () => {
             const { info } = InfoStore;
-            this.setState({ info: info });
+            this.setState({ info });
         };
         InfoStore.on('change', changeHandler);
         InfoAction.getInfo(failure);

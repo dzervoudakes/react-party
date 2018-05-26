@@ -24,7 +24,7 @@ class Faq extends React.Component {
         };
         const changeHandler = () => {
             const { faq } = FaqStore;
-            this.setState({ faq: faq });
+            this.setState({ faq });
         };
         FaqStore.on('change', changeHandler);
         FaqAction.getFaq(failure);
@@ -38,7 +38,7 @@ class Faq extends React.Component {
         if (entry !== this.state.entry) {
             if (openContainer !== null) openContainer.classList.remove('open');
             question.classList.add('open');
-            this.setState({ entry: entry });
+            this.setState({ entry });
         }
     };
 

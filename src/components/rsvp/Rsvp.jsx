@@ -12,14 +12,21 @@ const propTypes = {
 class Rsvp extends React.Component {
     constructor() {
         super();
-        this.state = { attendees: [], firstNameInvalid: false, lastNameInvalid: false };
+        this.state = {
+			attendees: [],
+			firstNameInvalid: false,
+			lastNameInvalid: false
+		};
         this.submitForm = this.submitForm.bind(this);
     }
 
     componentWillMount() {
         const { openDialog } = this.props;
         const failure = () => {
-            const opts = { message: 'There was an error getting the current attendees.', title: 'Oh no!' };
+			const opts = {
+				message: 'There was an error getting the current attendees.',
+				title: 'Oh no!'
+			};
             openDialog(opts);
         };
         const changeHandler = () => {
