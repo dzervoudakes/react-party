@@ -71,7 +71,7 @@ module.exports = merge(common, {
 			asset: '[path].gz[query]',
 			algorithm: 'gzip',
 			test: /vendor\.(.*)\.min\.js/,
-			threshold: 10240,			
+			threshold: 10240,
 			minRatio: 0.8
 		})
 	],
