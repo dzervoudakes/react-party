@@ -9,7 +9,7 @@ import './sass/style';
 // Blue: #007bff
 // Dark Gray: #343a40
 // Light Gray: #f1f1f1
-const partyTheme = {
+const theme = {
 	borderRadius: '20px',
 	fontFamily: 'Questrial, sans-serif',
 	palette: {
@@ -19,7 +19,7 @@ const partyTheme = {
 };
 
 const Main = () => (
-	<MuiThemeProvider muiTheme={getMuiTheme(partyTheme)}>
+	<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
 		<Router basename="/">
 			<App />
 		</Router>

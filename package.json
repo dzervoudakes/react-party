@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "node build/build.js",
+		"lint": "eslint . --ext .js,.jsx",
 		"local": "nodemon ./bin/www --ignore 'public/**/*'",
 		"start": "webpack --config ./build/webpack.local.js --watch & npm run local"
 	},
@@ -16,6 +17,7 @@
 	"devDependencies": {
 		"axios": "^0.16.2",
 		"babel-core": "^6.26.0",
+		"babel-eslint": "^8.2.3",
 		"babel-loader": "^7.1.2",
 		"babel-plugin-transform-class-properties": "^6.24.1",
 		"babel-plugin-transform-react-remove-prop-types": "^0.4.13",
@@ -26,6 +28,8 @@
 		"compression-webpack-plugin": "^1.1.11",
 		"copy-webpack-plugin": "^4.5.1",
 		"css-loader": "^0.28.7",
+		"eslint": "^4.19.1",
+		"eslint-plugin-react": "^7.9.1",
 		"events": "^1.1.1",
 		"extract-text-webpack-plugin": "^4.0.0-beta.0",
 		"flux": "^3.1.3",
