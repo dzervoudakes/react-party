@@ -24,7 +24,7 @@ module.exports = merge(common, {
 		rules: [
 			{
 				test: /\.jsx$/,
-				include: [path.resolve(__dirname, '../src')],
+				include: path.resolve(__dirname, '../src'),
 				loader: 'babel-loader',
 				query: {
 					plugins: ['transform-react-remove-prop-types']
