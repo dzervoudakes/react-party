@@ -5,7 +5,7 @@ const getFaq = () => {
 	return axios.get('/api/get?data=faq');
 };
 
-const dispatchEvent = (list, err) => {
+const dispatchEvent = list => {
 	AppDispatcher.dispatch({
 		actionName: 'GET_FAQ',
 		faq: list

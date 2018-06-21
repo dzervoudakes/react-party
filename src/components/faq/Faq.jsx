@@ -40,7 +40,7 @@ class Faq extends React.Component {
             question.classList.add('open');
             this.setState({ entry });
         }
-    };
+    }
 
     render() {
         const { faq } = this.state;

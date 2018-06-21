@@ -28,11 +28,11 @@ class MenuListItem extends React.PureComponent {
         } else {
             return (
                 <Link to={`/${path}`}>
-					{
-						onClick !== null ?
-						<MenuItem onClick={() => onClick()}>{label}</MenuItem> :
-						<MenuItem>{label}</MenuItem>
-					}
+									{
+										onClick !== null ?
+										<MenuItem onClick={() => onClick()}>{label}</MenuItem> :
+										<MenuItem>{label}</MenuItem>
+									}
                 </Link>
             );
         }
