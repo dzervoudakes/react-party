@@ -13,8 +13,9 @@ module.exports = {
 	],
 	"rules": {
 		"arrow-parens": ["error", "as-needed"],
+		"indent": ["error", "tab"],
 		"no-undef": 0,
-		"no-unused-vars": ["error", { "argsIgnorePattern": "React" }],
+		"no-unused-vars": ["error"],
 		"react/jsx-uses-react": 1,
 		"react/jsx-uses-vars": 1,
 		"react/no-unused-prop-types": 2
