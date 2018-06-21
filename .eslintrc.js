@@ -14,6 +14,7 @@ module.exports = {
 	"rules": {
 		"arrow-parens": ["error", "as-needed"],
 		"indent": ["error", "tab"],
+		"no-console": 1,
 		"no-undef": 0,
 		"no-unused-vars": ["error"],
 		"react/jsx-uses-react": 1,

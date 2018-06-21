@@ -10,14 +10,14 @@ const RsvpStore = Object.assign({}, EventEmitter.prototype, {
 AppDispatcher.register(payload => {
 	const { attendees } = payload;
 	switch (payload.actionName) {
-		case 'GET_RSVP':
-			RsvpStore.attendees = attendees;
-			RsvpStore.emitGetChange();
-			break;
-		case 'POST_RSVP':
-			RsvpStore.attendees = attendees;
-			RsvpStore.emitPostChange();
-			break;
+	case 'GET_RSVP':
+		RsvpStore.attendees = attendees;
+		RsvpStore.emitGetChange();
+		break;
+	case 'POST_RSVP':
+		RsvpStore.attendees = attendees;
+		RsvpStore.emitPostChange();
+		break;
 	}
 });
 

@@ -14,9 +14,9 @@ const dispatchEvent = (obj, err) => {
 
 const InfoAction = {
 	getInfo: failure => {
-        return getInfo()
-            .then(resp => dispatchEvent(resp.data))
-            .catch(err => { dispatchEvent({}, err); failure(); });
+		return getInfo()
+			.then(resp => dispatchEvent(resp.data))
+			.catch(err => { dispatchEvent({}, err); failure(); });
 	}
 };
 

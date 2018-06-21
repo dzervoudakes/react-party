@@ -8,11 +8,11 @@ const FaqStore = Object.assign({}, EventEmitter.prototype, {
 
 AppDispatcher.register(payload => {
 	switch (payload.actionName) {
-		case 'GET_FAQ':
-			const { faq } = payload;
-			FaqStore.faq = faq;
-			FaqStore.emitChange();
-			break;
+	case 'GET_FAQ':
+		const { faq } = payload;
+		FaqStore.faq = faq;
+		FaqStore.emitChange();
+		break;
 	}
 });
 
