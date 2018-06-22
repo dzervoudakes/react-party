@@ -52,14 +52,20 @@ class Rsvp extends React.Component {
 			attendees.push(newAttendee);
 			const data = { attendees: attendees };
 			const failure = () => {
-				const opts = { message: 'There was a problem submitting the form.', title: ':sadface:' };
+				const opts = {
+					message: 'There was a problem submitting the form.',
+					title: ':sadface:'
+				};
 				openDialog(opts);
 			};
 			const changeHandler = () => {
 				document.getElementById('firstName').value = '';
 				document.getElementById('lastName').value = '';
-				this.setState({ attendees: attendees, firstNameInvalid: false, lastNameInvalid: false });
-				const opts = { message: 'Congratulations, your RSVP was successful. See you at the party!', title: 'Awww yeah!' };
+				this.setState({ attendees, firstNameInvalid: false, lastNameInvalid: false });
+				const opts = {
+					message: 'Congratulations, your RSVP was successful. See you at the party!',
+					title: 'Awww yeah!'
+				};
 				openDialog(opts);
 			};
 			RsvpStore.on('change-post', changeHandler);
@@ -76,17 +82,18 @@ class Rsvp extends React.Component {
 		const { attendees, firstNameInvalid, lastNameInvalid } = this.state;
 		const length = attendees.length;
 		const listItems = attendees.map((obj, index) =>
-			<li key={`rsvp-${index}`}>{obj.firstName} {obj.lastName}</li>
+			<li key={ `rsvp-${index}` }>{obj.firstName} {obj.lastName}</li>
 		);
 		return (
 			<div id="rsvp" className="content-container rsvp">
 				<h3 className="title">RSVP</h3>
 				<hr className="gray-rule" />
-				<p>Because you know you want to come to the party, and the courteous thing to do would be to let the organizer know your intentions.</p>       
+				<p>Because you know you want to come to the party, and the courteous thing 
+					to do would be to let the organizer know your intentions.</p>       
 				<RsvpForm
-					firstNameInvalid={firstNameInvalid}
-					lastNameInvalid={lastNameInvalid}
-					submitForm={this.submitForm}
+					firstNameInvalid={ firstNameInvalid }
+					lastNameInvalid={ lastNameInvalid }
+					submitForm={ this.submitForm }
 				/>
 				<p>{length} {length === 0 || length > 1 ? 'people have' : 'person has'} RSVP'd:</p>
 				<hr className="gray-rule" />

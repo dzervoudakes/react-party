@@ -21,26 +21,29 @@ class Header extends React.Component {
 				<div className="gray-bar">
 					<p className="t-brand">Party At Tyson's</p>
 					<div className="button-bar phone-hidden">
-						<MenuListItem label="When/Where" flat={true} />
-						<MenuListItem path="faq" label="FAQ" flat={true} />
-						<MenuListItem path="rsvp" label="RSVP" flat={true} />
+						<MenuListItem label="When/Where" flat={ true } />
+						<MenuListItem path="faq" label="FAQ" flat={ true } />
+						<MenuListItem path="rsvp" label="RSVP" flat={ true } />
 					</div>
-					<div className="cheeseburger-button phone-visible" onClick={() => this.setMenuState(true)}>
+					<div
+						className="cheeseburger-button phone-visible"
+						onClick={ () => this.setMenuState(true) }
+					>
 						<div className="bar"></div>
 						<div className="bar"></div>
 						<div className="bar"></div>
 					</div>
 					<Drawer
-						disableSwipeToOpen={true}
-						docked={false}
-						open={this.state.mobileMenuOpen}
-						openSecondary={true}
-						onRequestChange={() => this.setMenuState()}
-						width={200}
+						disableSwipeToOpen={ true }
+						docked={ false }
+						open={ this.state.mobileMenuOpen }
+						openSecondary={ true }
+						onRequestChange={ () => this.setMenuState() }
+						width={ 200 }
 					>
-						<MenuListItem label="When/Where" onClick={this.setMenuState} />
-						<MenuListItem path="faq" label="FAQ" onClick={this.setMenuState} />
-						<MenuListItem path="rsvp" label="RSVP" onClick={this.setMenuState} />
+						<MenuListItem label="When/Where" onClick={ this.setMenuState } />
+						<MenuListItem path="faq" label="FAQ" onClick={ this.setMenuState } />
+						<MenuListItem path="rsvp" label="RSVP" onClick={ this.setMenuState } />
 					</Drawer>
 				</div>
 				<div className="banner">

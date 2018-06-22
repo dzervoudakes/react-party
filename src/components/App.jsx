@@ -30,19 +30,19 @@ class App extends React.Component {
 	render() {
 		const { message, open, title } = this.state.dialog;
 		const actions = [
-			<FlatButton label="Close" onClick={this.closeDialog} primary={true} />
+			<FlatButton label="Close" onClick={ this.closeDialog } primary={ true } />
 		];
 		return (
 			<div className="wrapper">
 				<Header />
 				<div className="panel">
-					<Routes openDialog={this.openDialog} />
+					<Routes openDialog={ this.openDialog } />
 				</div>
 				<Dialog
-					actions={actions}
-					onRequestClose={this.closeDialog}
-					open={open}
-					title={title}
+					actions={ actions }
+					onRequestClose={ this.closeDialog }
+					open={ open }
+					title={ title }
 				>
 					{message}
 				</Dialog>

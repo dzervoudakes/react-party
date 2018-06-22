@@ -46,11 +46,11 @@ class Faq extends React.Component {
 		const { faq } = this.state;
 		const faqItems = faq.map((obj, index) =>
 			<FaqBlock
-				answer={obj.answer}
-				index={index}
-				key={index}
-				question={obj.question}
-				updatePanel={this.updatePanel}
+				answer={ obj.answer }
+				index={ index }
+				key={ index }
+				question={ obj.question }
+				updatePanel={ this.updatePanel }
 			/>
 		);
 		return (

@@ -35,7 +35,10 @@ class Info extends React.Component {
 		const { info } = this.state;
 		const keys = Object.keys(info);
 		const listItems = keys.map(key =>
-			<li key={key}><span className="t-heavy">{key}:</span> <span dangerouslySetInnerHTML={{ __html: info[key] }} /></li>
+			<li key={ key }>
+				<span className="t-heavy">{key}:</span> 
+				<span dangerouslySetInnerHTML={{ __html: info[key] }} />
+			</li>
 		);
 		return (
 			<div id="whenWhere" className="content-container when-where">

@@ -3,8 +3,6 @@ import React from 'react';
 
 // @TODO: MOVE THE STATE OF THE MODAL TO OUR REDUX STORE AND PASS 'openDialog' THROUGH CONTAINERS
 
-class FaqContainer extends React.Component {
-
-}
+const FaqContainer = () => <h3>oh, hey</h3>;
 
 export default FaqContainer;

@@ -14,13 +14,13 @@ const propTypes = {
 const Routes = ({ openDialog }) => (
 	<Switch>
 		<Route exact path="/">
-			<Info openDialog={openDialog} />
+			<Info openDialog={ openDialog } />
 		</Route>
 		<Route path="/faq">
-			<FaqContainer openDialog={openDialog} />
+			<FaqContainer openDialog={ openDialog } />
 		</Route>
 		<Route path="/rsvp">
-			<Rsvp openDialog={openDialog} />
+			<Rsvp openDialog={ openDialog } />
 		</Route>
 	</Switch>
 );
