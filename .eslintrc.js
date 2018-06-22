@@ -21,7 +21,7 @@ module.exports = {
 		'no-console': 1,
 		'no-undef': 0,
 		'no-unused-vars': ['error'],
-		'react/jsx-closing-bracket-location': 1,
+		'react/jsx-closing-bracket-location': [1, 'line-aligned'],
 		'react/jsx-curly-spacing': [2, {
 			'when': 'always',
 			'spacing': {
