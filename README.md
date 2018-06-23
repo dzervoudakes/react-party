@@ -1,4 +1,4 @@
-# react-party
+# Party!
 > Rebuilt my buddy's [party website](http://party.tynick.com) with React.
 
 **Disclaimer:** I am not responsible for any content (including foul language) which he may decide to post.
