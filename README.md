@@ -1,13 +1,38 @@
 # react-party
-Rebuilt my buddy's party website with React.
-
-While I posted the link to the beta on my web server, my buddy actively manages the actual site at http://party.tynick.com.
+> Rebuilt my buddy's [party website](http://party.tynick.com) with React.
 
 **Disclaimer:** I am not responsible for any content (including foul language) which he may decide to post.
 
-- - - -
+## Instructions
 
-### Some Technologies Used
+##### Install Dependencies
+Note: I recommend `node` >= v9.0.0 and `npm` >= v5.6.0 to run the application.
+
+```
+npm install
+```
+
+##### Start Local Server
+```
+npm start
+```
+
+##### Run Linting
+```
+npm run lint
+```
+
+##### Run Linting with Fix
+```
+npm run lint:fix
+```
+
+##### Build for Production
+```
+npm run build
+```
+
+## Some Technologies Used
 * React
 * ES6 + Babel
 * Webpack
