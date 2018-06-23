@@ -18,7 +18,7 @@ const defaultProps = {
 };
 
 const MenuListItem = props => {
-	const { path , label, flat, onClick } = props;
+	const { path, label, flat, onClick } = props;
 	if (flat) {
 		const labelOpts = { color: '#fff', fontSize: '16px', textTransform: 'none' };
 		return (
