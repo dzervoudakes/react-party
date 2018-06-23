@@ -8,6 +8,8 @@ const port = process.env.port || 8080;
 
 global.__dirname = __dirname;
 
+app.use(fallback());
+
 if (process.env.NODE_ENV === 'development') {
 	const webpack = require('webpack');
 	const webpackConfig = require('./build/webpack.local');
@@ -35,7 +37,6 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-app.use(fallback());
 app.use('/api', apiRoutes);
 app.use(express.static(path.join(__dirname, '/public')));
 
