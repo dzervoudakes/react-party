@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Info from '@/components/info';
 import FaqContainer from '@/components/faq';
 import Rsvp from '@/components/rsvp';
+import Missing from '@/components/missing';
 
 // @TODO: REMOVE THE NEED TO PASS PROPS INTO THIS COMPONENT
 
@@ -16,12 +17,13 @@ const Routes = ({ openDialog }) => (
 		<Route exact path="/">
 			<Info openDialog={ openDialog } />
 		</Route>
-		<Route path="/faq">
+		<Route exact path="/faq">
 			<FaqContainer openDialog={ openDialog } />
 		</Route>
-		<Route path="/rsvp">
+		<Route exact path="/rsvp">
 			<Rsvp openDialog={ openDialog } />
 		</Route>
+		<Route component={ Missing } />
 	</Switch>
 );
 
