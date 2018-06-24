@@ -32,6 +32,13 @@ npm run lint:fix
 npm run build
 ```
 
+## Server Environments
+The same Express server runs development and production builds.
+
+> To run the server locally with webpack dev middleware, set `NODE_ENV=development`
+
+> To run the production server with static build assets from 'dist', set `NODE_ENV=production`
+
 ## Some Technologies Used
 * React
 * ES6/7 + Babel
