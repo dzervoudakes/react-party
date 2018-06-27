@@ -30,13 +30,13 @@ class Info extends React.Component {
 		InfoStore.on('change', changeHandler);
 		InfoAction.getInfo(failure);
 	}
-    
+
 	render() {
 		const { info } = this.state;
 		const keys = Object.keys(info);
 		const listItems = keys.map(key =>
 			<li key={ key }>
-				<span className="t-heavy">{key}:</span> 
+				<span className="t-heavy">{key}:</span>&nbsp;
 				<span dangerouslySetInnerHTML={{ __html: info[key] }} />
 			</li>
 		);

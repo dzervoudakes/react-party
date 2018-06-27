@@ -20,20 +20,9 @@ module.exports = merge(common, {
 	performance: {
 		hints: false
 	},
-	module: {
-		rules: [
-			{
-				test: /\.jsx$/,
-				include: path.resolve(__dirname, '../src'),
-				loader: 'babel-loader',
-				query: {
-					plugins: ['transform-react-remove-prop-types']
-				}
-			}
-		]
-	},
 	plugins: [
 		new webpack.EnvironmentPlugin({
+			BABEL_ENV: 'production',
 			NODE_ENV: 'production'
 		}),
 		new CleanWebpackPlugin(['dist'], {
