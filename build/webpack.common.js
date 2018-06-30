@@ -16,9 +16,9 @@ module.exports = {
 				loader: 'babel-loader'
 			},
 			{
-				test: /\.scss$/,
+				test: /\.(sass|scss)$/,
 				include: APP_DIR,
-				loader: ExtractTextPlugin.extract('css-loader!sass-loader!postcss-loader')
+				loader: ExtractTextPlugin.extract('css-loader!postcss-loader!sass-loader')
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
