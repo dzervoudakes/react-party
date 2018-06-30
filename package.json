@@ -8,8 +8,8 @@
 		"lint": "eslint . --ext js,jsx",
 		"lint:fix": "eslint . --ext js,jsx --fix",
 		"start": "NODE_ENV=development node index.js",
-		"stylelint": "stylelint src/**/**/*.scss",
-		"stylelint:fix": "stylelint src/**/**/*.scss --fix"
+		"stylelint": "stylelint **/*.scss !./node_modules/**",
+		"stylelint:fix": "stylelint **/*.scss !./node_modules/** --fix"
 	},
 	"repository": {
 		"type": "git",
