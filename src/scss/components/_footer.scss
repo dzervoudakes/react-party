@@ -1,0 +1,15 @@
+.footer {
+	background: $color-gray-dark;
+	margin-top: -75px;
+	padding: 28px 0;
+	position: absolute;
+	text-align: center;
+	top: 100%;
+	width: 100%;
+
+	.t-copyright {
+		color: #fff;
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,73 @@
+.content-container.rsvp {
+	.rsvp-form {
+		margin: 30px auto;
+
+		.form-input-container {
+			display: inline-block;
+			width: 45%;
+
+			&.right {
+				float: right;
+				vertical-align: top;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 10px;
+			}
+
+			input {
+				border: 1px solid $color-super-light-gray;
+				border-radius: $border-radius-common;
+				box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+				margin-bottom: 15px;
+				outline: 0;
+				padding: 5px;
+				transition: border-color 0.2s;
+				width: 90%;
+
+				&.invalid {
+					border-color: #f00;
+				}
+
+				&:focus,
+				&.invalid:focus {
+					border-color: $color-blue-primary;
+				}
+			}
+		}
+
+		.submit-button {
+			appearance: none;
+			background: #fff;
+			border: 1px solid $color-blue-primary;
+			border-radius: $border-radius-common;
+			color: $color-blue-primary;
+			cursor: pointer;
+			outline: none;
+			padding: 5px;
+			transition: opacity 0.2s;
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+
+	.rsvp-list {
+		li {
+			padding-left: 10px;
+			position: relative;
+
+			&::before {
+				background: $color-super-light-gray;
+				border-radius: $border-radius-common;
+				content: '';
+				height: 100%;
+				left: 0;
+				position: absolute;
+				width: 3px;
+			}
+		}
+	}
+}

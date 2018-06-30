@@ -1,0 +1,73 @@
+.t-brand {
+	color: #fff;
+	cursor: default;
+	display: inline-block;
+	line-height: 36px;
+	margin-bottom: 0;
+
+	@media (min-width: $breakpoint-min) {
+		font-size: 24px;
+	}
+
+	@media (max-width: $breakpoint-max) {
+		font-size: 18px;
+	}
+}
+
+.button-bar {
+	float: right;
+
+	@media (max-width: $breakpoint-max) {
+		display: none;
+	}
+}
+
+.cheeseburger-button {
+	border: 1px solid #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	float: right;
+	opacity: 0.2;
+	padding: 5px 10px;
+	transition: opacity 0.2s;
+}
+
+.cheeseburger-button:hover {
+	opacity: 1;
+}
+
+.cheeseburger-button .bar {
+	background-color: #fff;
+	height: 2px;
+	margin: 5px 0;
+	width: 25px;
+}
+
+.banner {
+	background: $color-blue-primary;
+	color: #fff;
+	text-align: center;
+
+	@media (min-width: $breakpoint-min) {
+		padding: 80px 18px;
+	}
+
+	@media (max-width: $breakpoint-max) {
+		padding: 30px 18px;
+	}
+
+	h2 {
+		font {
+			@media (min-width: $breakpoint-min) {
+				size: 26px;
+			}
+
+			@media (max-width: $breakpoint-max) {
+				size: 22px;
+			}
+		}
+
+		font-weight: normal;
+		margin-top: 10px;
+	}
+}

@@ -27,6 +27,16 @@ npm run lint
 npm run lint:fix
 ```
 
+##### Run Style Linting
+```
+npm run stylelint
+```
+
+##### Run Style Linting with Fix
+```
+npm run stylelint:fix
+```
+
 ##### Build for Production
 ```
 npm run build
