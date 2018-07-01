@@ -21,7 +21,8 @@ module.exports = merge(common, {
 			filename: 'index.html',
 			template: `${PUBLIC_DIR}/index.html`,
 			title: 'Party!'
-		})
+		}),
+		new webpack.NoEmitOnErrorsPlugin()
 	],
 	output: {
 		path: ROOT_DIR,
