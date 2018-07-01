@@ -57,5 +57,5 @@ The same Express server runs development and production builds.
 * Flux Architecture
 * Material-ui
 * React-router-dom
-* SASS
+* Sass
 * Node + Express
