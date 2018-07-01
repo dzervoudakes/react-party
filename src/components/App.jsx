@@ -44,7 +44,7 @@ class App extends React.Component {
 					open={ open }
 					title={ title }
 				>
-					{message}
+					{ message }
 				</Dialog>
 				<Footer />
 			</div>
