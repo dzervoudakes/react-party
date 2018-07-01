@@ -30,7 +30,8 @@ module.exports = merge(common, {
 			title: 'Party!'
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoEmitOnErrorsPlugin()
+		new webpack.NoEmitOnErrorsPlugin(),
+		new webpack.NamedModulesPlugin()
 	],
 	output: {
 		path: ROOT_DIR,

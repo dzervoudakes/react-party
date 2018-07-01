@@ -96,7 +96,9 @@ class Rsvp extends React.Component {
 					lastNameInvalid={ lastNameInvalid }
 					submitForm={ this.submitForm }
 				/>
-				<p>{ length } { length === 0 || length > 1 ? 'people have' : 'person has' } RSVP'd:</p>
+				<p>
+					{ length } { length === 0 || length > 1 ? 'people have' : 'person has' } RSVP'd:
+				</p>
 				<hr className="gray-rule" />
 				<ul className="rsvp-list">{listItems}</ul>
 			</div>
