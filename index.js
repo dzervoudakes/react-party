@@ -14,6 +14,8 @@ if (process.env.NODE_ENV === 'development') {
 	const webpack = require('webpack');
 	const webpackConfig = require('./build/webpack.dev');
 	const webpackDev = require('webpack-dev-middleware');
+	const webpackHot = require('webpack-hot-middleware');
+	const opn = require('opn');
 
 	const compiler = webpack(webpackConfig);
 	const devMiddleware = webpackDev(compiler, {
@@ -21,7 +23,24 @@ if (process.env.NODE_ENV === 'development') {
 		quiet: true
 	});
 
+	const hotMiddleware = webpackHot(compiler, {
+		log: false,
+		heartbeat: 2000
+	});
+
+	compiler.plugin('compilation', compilation => {
+		compilation.plugin('html-webpack-plugin-after-emit', () => {
+			hotMiddleware.publish({ action: 'reload' });
+		});
+	});
+
+	devMiddleware.waitUntilValid(() => {
+		const url = `http://localhost:${port}`;
+		opn(url);
+	});
+
 	app.use(devMiddleware);
+	app.use(hotMiddleware);
 }
 
 if (process.env.NODE_ENV === 'production') {
