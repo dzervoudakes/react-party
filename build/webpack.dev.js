@@ -13,7 +13,7 @@ const {
 
 module.exports = merge(common, {
 	entry: {
-		app: ['./build/dev-client.js', `${APP_DIR}/index.jsx`]
+		app: ['./build/hot-client.js', `${APP_DIR}/index.jsx`]
 	},
 	mode: 'development',
 	plugins: [
