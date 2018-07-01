@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RsvpForm from './RsvpForm';
+import './scss/Rsvp';
 
 const RsvpAction = require('@/actions/RsvpAction.js');
 const RsvpStore = require('@/stores/RsvpStore.js');
@@ -37,7 +38,7 @@ class Rsvp extends React.Component {
 		RsvpAction.getRsvp(failure);
 	}
 
-	// @TODO: MOVE THIS INTO A UTIL OF SOME SORT AND MAKE IT LESS CUMBERSOME
+	// @TODO: REACT-VALIDASHE
 	submitForm(e) {
 		e.preventDefault();
 		const { openDialog } = this.props;
@@ -77,25 +78,25 @@ class Rsvp extends React.Component {
 			});
 		}
 	}
-    
+
 	render() {
 		const { attendees, firstNameInvalid, lastNameInvalid } = this.state;
 		const length = attendees.length;
 		const listItems = attendees.map((obj, index) =>
-			<li key={ `rsvp-${index}` }>{obj.firstName} {obj.lastName}</li>
+			<li key={ `rsvp-${index}` }>{ obj.firstName } { obj.lastName }</li>
 		);
 		return (
 			<div id="rsvp" className="content-container rsvp">
 				<h3 className="title">RSVP</h3>
 				<hr className="gray-rule" />
-				<p>Because you know you want to come to the party, and the courteous thing 
-					to do would be to let the organizer know your intentions.</p>       
+				<p>Because you know you want to come to the party, and the courteous thing
+					to do would be to let the organizer know your intentions.</p>
 				<RsvpForm
 					firstNameInvalid={ firstNameInvalid }
 					lastNameInvalid={ lastNameInvalid }
 					submitForm={ this.submitForm }
 				/>
-				<p>{length} {length === 0 || length > 1 ? 'people have' : 'person has'} RSVP'd:</p>
+				<p>{ length } { length === 0 || length > 1 ? 'people have' : 'person has' } RSVP'd:</p>
 				<hr className="gray-rule" />
 				<ul className="rsvp-list">{listItems}</ul>
 			</div>

@@ -1,0 +1,20 @@
+@import '~@/scss/_constants';
+
+.content-container.rsvp {
+	.rsvp-list {
+		li {
+			padding-left: 10px;
+			position: relative;
+
+			&::before {
+				background: $color-super-light-gray;
+				border-radius: $border-radius-common;
+				content: '';
+				height: 100%;
+				left: 0;
+				position: absolute;
+				width: 3px;
+			}
+		}
+	}
+}

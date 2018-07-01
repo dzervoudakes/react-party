@@ -36,7 +36,7 @@ class Info extends React.Component {
 		const keys = Object.keys(info);
 		const listItems = keys.map(key =>
 			<li key={ key }>
-				<span className="t-heavy">{key}:</span>&nbsp;
+				<span className="t-heavy">{ key }:</span>&nbsp;
 				<span dangerouslySetInnerHTML={{ __html: info[key] }} />
 			</li>
 		);
@@ -44,7 +44,7 @@ class Info extends React.Component {
 			<div id="whenWhere" className="content-container when-where">
 				<h3 className="title">When/Where</h3>
 				<hr className="gray-rule" />
-				<ul className="when-where-list">{listItems}</ul>
+				<ul className="when-where-list">{ listItems }</ul>
 			</div>
 		);
 	}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './scss/RsvpForm';
 
 const propTypes = {
 	firstNameInvalid: PropTypes.bool.isRequired,

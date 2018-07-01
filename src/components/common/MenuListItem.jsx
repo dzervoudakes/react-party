@@ -35,8 +35,8 @@ const MenuListItem = props => {
 			<Link to={ `/${path}` }>
 				{
 					onClick !== null ?
-						<MenuItem onClick={ () => onClick() }>{label}</MenuItem> :
-						<MenuItem>{label}</MenuItem>
+						<MenuItem onClick={ () => onClick() }>{ label }</MenuItem> :
+						<MenuItem>{ label }</MenuItem>
 				}
 			</Link>
 		);

@@ -57,7 +57,7 @@ class Faq extends React.Component {
 			<div id="faq" className="content-container faq">
 				<h3 className="title">FAQ</h3>
 				<hr className="gray-rule" />
-				{faqItems}
+				{ faqItems }
 			</div>
 		);
 	}
