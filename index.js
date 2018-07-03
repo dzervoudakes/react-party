@@ -11,7 +11,7 @@ global.__dirname = __dirname;
 app.use(fallback());
 
 if (process.env.NODE_ENV === 'development') {
-	const middleware = require('./build/dev-middleware')();
+	const middleware = require('./build/dev-middleware');
 	const { devMiddleware, hotMiddleware } = middleware;
 
 	app.use(devMiddleware);
