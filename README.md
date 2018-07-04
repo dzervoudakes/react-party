@@ -42,6 +42,11 @@ npm run stylelint:fix
 npm run build
 ```
 
+##### Build for Production with Bundle Analyzer Report
+```
+npm run build --report
+```
+
 ## Server Environments
 The same Express server runs development and production builds.
 
