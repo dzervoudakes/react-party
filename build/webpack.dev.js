@@ -14,10 +14,7 @@ const {
 
 module.exports = merge(common, {
 	entry: {
-		app: [
-			'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true&noInfo=true',
-			`${APP_DIR}/index.jsx`
-		]
+		app: ['./build/hot-client', `${APP_DIR}/index.jsx`]
 	},
 	mode: 'development',
 	plugins: [
@@ -35,7 +32,6 @@ module.exports = merge(common, {
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new FriendlyErrorsPlugin()
-
 	],
 	optimization: {
 		noEmitOnErrors: true,
