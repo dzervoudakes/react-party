@@ -1,6 +1,7 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import { hot } from 'react-hot-loader';
 import Header from './header';
 import Footer from './footer';
 import Routes from './routes';
@@ -52,4 +53,4 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+export default hot(module)(App);
