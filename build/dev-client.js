@@ -1,6 +1,6 @@
-const hotClient = require('webpack-hot-middleware/client');
+const devClient = require('webpack-hot-middleware/client');
 
-hotClient.setOptionsAndConnect({
+devClient.setOptionsAndConnect({
 	path: '/__webpack_hmr',
 	noInfo: true,
 	reload: true,
