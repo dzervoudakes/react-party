@@ -37,7 +37,8 @@ class App extends React.Component {
 			<div className="wrapper">
 				<Header />
 				<div className="panel">
-					<Routes openDialog={ this.openDialog } />
+					{/* <Routes openDialog={ this.openDialog } /> */}
+					<Routes />
 				</div>
 				<Dialog
 					actions={ actions }
