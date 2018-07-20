@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const InfoAction = require('@/actions/InfoAction.js');
 const InfoStore = require('@/stores/InfoStore.js');
 
-const propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+// const propTypes = {
+// 	openDialog: PropTypes.func.isRequired
+// };
 
 class Info extends React.Component {
 	constructor() {
@@ -15,13 +15,13 @@ class Info extends React.Component {
 	}
 
 	componentWillMount() {
-		const { openDialog } = this.props;
+		// const { openDialog } = this.props;
 		const failure = () => {
 			const opts = {
 				message: 'There was an error getting the when/where info.',
 				title: 'Lame...'
 			};
-			openDialog(opts);
+			// openDialog(opts);
 		};
 		const changeHandler = () => {
 			const { info } = InfoStore;
@@ -50,6 +50,6 @@ class Info extends React.Component {
 	}
 }
 
-Info.propTypes = propTypes;
+// Info.propTypes = propTypes;
 
 export default Info;

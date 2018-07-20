@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import FaqBlock from './FaqBlock';
 
 const FaqAction = require('@/actions/FaqAction.js');
 const FaqStore = require('@/stores/FaqStore.js');
 
-const propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+// const propTypes = {
+// 	openDialog: PropTypes.func.isRequired
+// };
 
 class Faq extends React.Component {
 	constructor() {
@@ -17,10 +17,10 @@ class Faq extends React.Component {
 	}
 
 	componentWillMount() {
-		const { openDialog } = this.props;
+		// const { openDialog } = this.props;
 		const failure = () => {
 			const opts = { message: 'There was an error getting the FAQ data.', title: 'D\'oh!' };
-			openDialog(opts);
+			// openDialog(opts);
 		};
 		const changeHandler = () => {
 			const { faq } = FaqStore;
@@ -63,6 +63,6 @@ class Faq extends React.Component {
 	}
 }
 
-Faq.propTypes = propTypes;
+// Faq.propTypes = propTypes;
 
 export default Faq;

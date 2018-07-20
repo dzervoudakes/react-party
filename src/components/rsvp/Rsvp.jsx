@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import RsvpForm from './RsvpForm';
 import './scss/Rsvp';
 
 const RsvpAction = require('@/actions/RsvpAction.js');
 const RsvpStore = require('@/stores/RsvpStore.js');
 
-const propTypes = {
-	openDialog: PropTypes.func.isRequired
-};
+// const propTypes = {
+// 	openDialog: PropTypes.func.isRequired
+// };
 
 class Rsvp extends React.Component {
 	constructor() {
@@ -22,13 +22,13 @@ class Rsvp extends React.Component {
 	}
 
 	componentWillMount() {
-		const { openDialog } = this.props;
+		// const { openDialog } = this.props;
 		const failure = () => {
 			const opts = {
 				message: 'There was an error getting the current attendees.',
 				title: 'Oh no!'
 			};
-			openDialog(opts);
+			// openDialog(opts);
 		};
 		const changeHandler = () => {
 			const { attendees } = RsvpStore;
@@ -41,7 +41,7 @@ class Rsvp extends React.Component {
 	// @TODO: REACT-VALIDASHE
 	submitForm(e) {
 		e.preventDefault();
-		const { openDialog } = this.props;
+		// const { openDialog } = this.props;
 		const firstName = document.getElementById('firstName').value;
 		const lastName = document.getElementById('lastName').value;
 		if (firstName.length > 0 && lastName.length > 0) {
@@ -57,7 +57,7 @@ class Rsvp extends React.Component {
 					message: 'There was a problem submitting the form.',
 					title: ':sadface:'
 				};
-				openDialog(opts);
+				// openDialog(opts);
 			};
 			const changeHandler = () => {
 				document.getElementById('firstName').value = '';
@@ -67,7 +67,7 @@ class Rsvp extends React.Component {
 					message: 'Congratulations, your RSVP was successful. See you at the party!',
 					title: 'Awww yeah!'
 				};
-				openDialog(opts);
+				// openDialog(opts);
 			};
 			RsvpStore.on('change-post', changeHandler);
 			RsvpAction.postRsvp(data, failure);
@@ -106,6 +106,6 @@ class Rsvp extends React.Component {
 	}
 }
 
-Rsvp.propTypes = propTypes;
+// Rsvp.propTypes = propTypes;
 
 export default Rsvp;
