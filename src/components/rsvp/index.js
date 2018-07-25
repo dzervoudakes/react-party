@@ -1,3 +1,1 @@
-import Rsvp from './Rsvp';
-
-export default Rsvp;
+export { default } from './Rsvp';
