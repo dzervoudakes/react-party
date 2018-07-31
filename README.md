@@ -5,44 +5,44 @@
 
 ## Instructions
 
-##### Install Dependencies
+### Install Dependencies
 Note: I recommend `node` >= v9.0.0 and `npm` >= v5.6.0 to run the application.
 
 ```
 npm install
 ```
 
-##### Start Local Server
+### Start Local Server
 ```
 npm start
 ```
 
-##### Run Linting
+### Run Linting
 ```
 npm run lint
 ```
 
-##### Run Linting with Fix
+### Run Linting with Fix
 ```
 npm run lint:fix
 ```
 
-##### Run Style Linting
+### Run Style Linting
 ```
 npm run stylelint
 ```
 
-##### Run Style Linting with Fix
+### Run Style Linting with Fix
 ```
 npm run stylelint:fix
 ```
 
-##### Build for Production
+### Build for Production
 ```
 npm run build
 ```
 
-##### Build for Production with Bundle Analyzer Report
+### Build for Production with Bundle Analyzer Report
 ```
 npm run build --report
 ```
