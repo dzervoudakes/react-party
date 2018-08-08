@@ -1,10 +1,12 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import { Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
+import routes from '@/routes';
 import Header from './header';
 import Footer from './footer';
-import Routes from './routes';
+import Missing from './missing';
 
 class App extends React.Component {
 	constructor() {
@@ -37,8 +39,12 @@ class App extends React.Component {
 			<div className="wrapper">
 				<Header />
 				<div className="panel">
-					{/* <Routes openDialog={ this.openDialog } /> */}
-					<Routes />
+					<Switch>
+						{routes.map(route => (
+							<Route exact key={ route.path } { ...route } />
+						))}
+						<Route component={ Missing } />
+					</Switch>
 				</div>
 				<Dialog
 					actions={ actions }
