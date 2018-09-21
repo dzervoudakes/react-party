@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const fallback = require('connect-history-api-fallback');
+const history = require('connect-history-api-fallback');
 const apiRoutes = require('./routes/api');
 
 const app = express();
@@ -8,7 +8,7 @@ const port = process.env.port || 8080;
 
 global.__dirname = __dirname;
 
-app.use(fallback());
+app.use(history());
 
 if (process.env.NODE_ENV === 'development') {
 	const middleware = require('./build/dev-middleware');
@@ -19,11 +19,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 if (process.env.NODE_ENV === 'production') {
-	const connect = require('connect');
-	const gzipStatic = require('connect-gzip-static');
-
-	connect().use(gzipStatic(`${__dirname}/public`));
-
 	app.get('/', (req, res) => {
 		res.sendFile(path.join(__dirname, '/public/index.html'));
 	});
