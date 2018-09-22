@@ -25,8 +25,7 @@ const webpackConfig = merge(common, {
 			root: ROOT_DIR
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].[chunkhash].min.css',
-			chunkFilename: 'css/[name].[chunkhash].min.css'
+			filename: 'css/[name].[chunkhash].min.css'
 		}),
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /\.min\.css$/,
