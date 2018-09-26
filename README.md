@@ -47,20 +47,11 @@ npm run build
 npm run build --report
 ```
 
+## Configuration
+> This application makes use of `ESLint`, `Stylelint` and `EditorConfig`. Each of these features requires
+> an extension be installed in order to work properly with IDEs and text editors such as VSCode.
+
 ## Server Environments
-The same Express server runs development and production builds.
-
-> To run the server locally with webpack dev middleware, set `NODE_ENV=development`
-
-> To run the production server with static build assets from 'dist', set `NODE_ENV=production`
-
-## Some Technologies Used
-* React
-* ES6/7 + Babel
-* Webpack
-* Axios
-* Flux Architecture
-* Material-ui
-* React-router-dom
-* Sass
-* Node + Express
+> The same Express server handles development and production content. To run the server locally
+> with webpack dev middleware, run `npm start`. To run the production server with static
+> build assets from 'dist', run `NODE_ENV=production node index.js`.
