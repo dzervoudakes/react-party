@@ -1,6 +1,5 @@
 import Info from '@/components/info';
-import FaqContainer from '@/components/faq';
-import Rsvp from '@/components/rsvp';
+import importer from 'common/hocs/importer';
 
 const routes = [
 	{
@@ -9,11 +8,11 @@ const routes = [
 	},
 	{
 		path: '/faq',
-		component: FaqContainer
+		component: importer(() => import(/* webpackChunkName: 'faq' */ '@/components/faq'))
 	},
 	{
 		path: '/rsvp',
-		component: Rsvp
+		component: importer(() => import(/* webpackChunkName: 'rsvp' */ '@/components/rsvp'))
 	}
 ];
 
