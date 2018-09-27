@@ -8,11 +8,11 @@ const routes = [
 	},
 	{
 		path: '/faq',
-		component: importer(() => import(/* webpackChunkName: 'faq' */ '@/components/faq'))
+		component: importer(() => import(/* webpackChunkName: "faq" */ '@/components/faq'))
 	},
 	{
 		path: '/rsvp',
-		component: importer(() => import(/* webpackChunkName: 'rsvp' */ '@/components/rsvp'))
+		component: importer(() => import(/* webpackChunkName: "rsvp" */ '@/components/rsvp'))
 	}
 ];
 
