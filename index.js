@@ -28,6 +28,5 @@ app.use('/api', apiRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
-	// eslint-disable-next-line
 	console.log(`react-party booted up on port ${port}`);
 });
