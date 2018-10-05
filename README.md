@@ -6,7 +6,7 @@
 ## Instructions
 
 ### Install Dependencies
-Note: I recommend `node` >= v9.0.0 and `npm` >= v5.6.0 to run the application.
+Note: I recommend `node` >= v10.11.0 and `npm` >= v6.4.1 to run the application.
 
 ```
 npm install
