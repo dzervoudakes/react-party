@@ -1,7 +1,7 @@
 {
 	"name": "react-party",
 	"version": "1.0.0",
-	"description": "Party info site.",
+	"description": "Party info React + Express application.",
 	"main": "index.js",
 	"scripts": {
 		"build": "node build/build.js",
