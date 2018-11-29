@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Something } from 'material-ui/something';
 
-const importer = importComponent => {
+const dynamicImport = importComponent => {
 	return class extends React.Component {
 		constructor(props) {
 			super(props);
@@ -23,4 +23,4 @@ const importer = importComponent => {
 	};
 };
 
-export default importer;
+export default dynamicImport;

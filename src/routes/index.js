@@ -1,5 +1,5 @@
 import Info from '@/components/info';
-import importer from 'common/hocs/importer';
+import dynamicImport from 'common/hocs/dynamicImport';
 
 const routes = [
 	{
@@ -8,11 +8,11 @@ const routes = [
 	},
 	{
 		path: '/faq',
-		component: importer(() => import(/* webpackChunkName: "faq" */ '@/components/faq'))
+		component: dynamicImport(() => import(/* webpackChunkName: "faq" */ '@/components/faq'))
 	},
 	{
 		path: '/rsvp',
-		component: importer(() => import(/* webpackChunkName: "rsvp" */ '@/components/rsvp'))
+		component: dynamicImport(() => import(/* webpackChunkName: "rsvp" */ '@/components/rsvp'))
 	}
 ];
 
