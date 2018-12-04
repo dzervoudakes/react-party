@@ -1,4 +1,3 @@
-// import { lazy } from 'react';
 import Info from '@/components/info';
 import dynamicImport from 'common/hocs/dynamicImport';
 
