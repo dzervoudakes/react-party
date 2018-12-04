@@ -4,15 +4,15 @@ import React from 'react';
 const InfoAction = require('@/actions/InfoAction.js');
 const InfoStore = require('@/stores/InfoStore.js');
 
-// const propTypes = {
-// 	openDialog: PropTypes.func.isRequired
-// };
-
 class Info extends React.Component {
 	constructor() {
 		super();
 		this.state = { info: {} };
 	}
+
+	// static propTypes = {
+	// 	openDialog: PropTypes.func.isRequired
+	// };
 
 	componentWillMount() {
 		// const { openDialog } = this.props;
@@ -35,8 +35,8 @@ class Info extends React.Component {
 		const { info } = this.state;
 		const keys = Object.keys(info);
 		const listItems = keys.map(key =>
-			<li key={ key }>
-				<span className="t-heavy">{ key }:</span>&nbsp;
+			<li key={key}>
+				<span className="t-heavy">{key}:</span>&nbsp;
 				<span dangerouslySetInnerHTML={{ __html: info[key] }} />
 			</li>
 		);
@@ -44,12 +44,10 @@ class Info extends React.Component {
 			<div id="whenWhere" className="content-container when-where">
 				<h3 className="title">When/Where</h3>
 				<hr className="gray-rule" />
-				<ul className="when-where-list">{ listItems }</ul>
+				<ul className="when-where-list">{listItems}</ul>
 			</div>
 		);
 	}
 }
-
-// Info.propTypes = propTypes;
 
 export default Info;

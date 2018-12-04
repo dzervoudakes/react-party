@@ -5,16 +5,15 @@ import FaqBlock from './FaqBlock';
 const FaqAction = require('@/actions/FaqAction.js');
 const FaqStore = require('@/stores/FaqStore.js');
 
-// const propTypes = {
-// 	openDialog: PropTypes.func.isRequired
-// };
-
 class Faq extends React.Component {
 	constructor() {
 		super();
 		this.state = { entry: 0, faq: [] };
-		this.updatePanel = this.updatePanel.bind(this);
 	}
+
+	// static propTypes = {
+	// 	openDialog: PropTypes.func.isRequired
+	// };
 
 	componentWillMount() {
 		// const { openDialog } = this.props;
@@ -31,7 +30,7 @@ class Faq extends React.Component {
 	}
 
 	// @TODO: REFACTOR...
-	updatePanel(entry) {
+	updatePanel = entry => {
 		const openContainer = document.querySelector('.faq-block.open');
 		const question = document.querySelector(`.faq-block[data-entry="${entry}"]`);
 		if (entry === this.state.entry) question.classList.toggle('open');
@@ -46,23 +45,21 @@ class Faq extends React.Component {
 		const { faq } = this.state;
 		const faqItems = faq.map((obj, index) =>
 			<FaqBlock
-				answer={ obj.answer }
-				index={ index }
-				key={ index }
-				question={ obj.question }
-				updatePanel={ this.updatePanel }
+				answer={obj.answer}
+				index={index}
+				key={index}
+				question={obj.question}
+				updatePanel={this.updatePanel}
 			/>
 		);
 		return (
 			<div id="faq" className="content-container faq">
 				<h3 className="title">FAQ</h3>
 				<hr className="gray-rule" />
-				{ faqItems }
+				{faqItems}
 			</div>
 		);
 	}
 }
-
-// Faq.propTypes = propTypes;
 
 export default Faq;

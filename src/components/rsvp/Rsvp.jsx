@@ -6,10 +6,6 @@ import './scss/Rsvp';
 const RsvpAction = require('@/actions/RsvpAction.js');
 const RsvpStore = require('@/stores/RsvpStore.js');
 
-// const propTypes = {
-// 	openDialog: PropTypes.func.isRequired
-// };
-
 class Rsvp extends React.Component {
 	constructor() {
 		super();
@@ -18,8 +14,11 @@ class Rsvp extends React.Component {
 			firstNameInvalid: false,
 			lastNameInvalid: false
 		};
-		this.submitForm = this.submitForm.bind(this);
 	}
+
+	// static propTypes = {
+	// 	openDialog: PropTypes.func.isRequired
+	// };
 
 	componentWillMount() {
 		// const { openDialog } = this.props;
@@ -39,7 +38,7 @@ class Rsvp extends React.Component {
 	}
 
 	// @TODO: REACT-VALIDASHE
-	submitForm(e) {
+	submitForm = e => {
 		e.preventDefault();
 		// const { openDialog } = this.props;
 		const firstName = document.getElementById('firstName').value;
@@ -83,7 +82,7 @@ class Rsvp extends React.Component {
 		const { attendees, firstNameInvalid, lastNameInvalid } = this.state;
 		const length = attendees.length;
 		const listItems = attendees.map((obj, index) =>
-			<li key={ `rsvp-${index}` }>{ obj.firstName } { obj.lastName }</li>
+			<li key={`rsvp-${index}`}>{obj.firstName} {obj.lastName}</li>
 		);
 		return (
 			<div id="rsvp" className="content-container rsvp">
@@ -92,12 +91,12 @@ class Rsvp extends React.Component {
 				<p>Because you know you want to come to the party, and the courteous thing
 					to do would be to let the organizer know your intentions.</p>
 				<RsvpForm
-					firstNameInvalid={ firstNameInvalid }
-					lastNameInvalid={ lastNameInvalid }
-					submitForm={ this.submitForm }
+					firstNameInvalid={firstNameInvalid}
+					lastNameInvalid={lastNameInvalid}
+					submitForm={this.submitForm}
 				/>
 				<p>
-					{ length } { length === 0 || length > 1 ? 'people have' : 'person has' } RSVP'd:
+					{length} {length === 0 || length > 1 ? 'people have' : 'person has'} RSVP'd:
 				</p>
 				<hr className="gray-rule" />
 				<ul className="rsvp-list">{listItems}</ul>
@@ -105,7 +104,5 @@ class Rsvp extends React.Component {
 		);
 	}
 }
-
-// Rsvp.propTypes = propTypes;
 
 export default Rsvp;

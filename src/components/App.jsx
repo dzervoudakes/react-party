@@ -33,7 +33,7 @@ class App extends React.Component {
 	render() {
 		const { message, open, title } = this.state.dialog;
 		const actions = [
-			<FlatButton label="Close" onClick={ this.closeDialog } primary={ true } />
+			<FlatButton label="Close" onClick={this.closeDialog} primary={true} />
 		];
 		return (
 			<div className="wrapper">
@@ -41,18 +41,18 @@ class App extends React.Component {
 				<div className="panel">
 					<Switch>
 						{routes.map(route => (
-							<Route exact key={ route.path } { ...route } />
+							<Route exact key={route.path} {...route} />
 						))}
-						<Route component={ Missing } />
+						<Route component={Missing} />
 					</Switch>
 				</div>
 				<Dialog
-					actions={ actions }
-					onRequestClose={ this.closeDialog }
-					open={ open }
-					title={ title }
+					actions={actions}
+					onRequestClose={this.closeDialog}
+					open={open}
+					title={title}
 				>
-					{ message }
+					{message}
 				</Dialog>
 				<Footer />
 			</div>

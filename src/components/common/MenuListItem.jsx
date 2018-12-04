@@ -22,21 +22,21 @@ const MenuListItem = props => {
 	if (flat) {
 		const labelOpts = { color: '#fff', fontSize: '16px', textTransform: 'none' };
 		return (
-			<Link to={ `/${path}` }>
+			<Link to={`/${path}`}>
 				<FlatButton
-					label={ label }
-					labelStyle={ labelOpts }
-					secondary={ true }
+					label={label}
+					labelStyle={labelOpts}
+					secondary={true}
 				/>
 			</Link>
 		);
 	} else {
 		return (
-			<Link to={ `/${path}` }>
+			<Link to={`/${path}`}>
 				{
 					onClick !== null ?
-						<MenuItem onClick={ () => onClick() }>{ label }</MenuItem> :
-						<MenuItem>{ label }</MenuItem>
+						<MenuItem onClick={() => onClick()}>{label}</MenuItem> :
+						<MenuItem>{label}</MenuItem>
 				}
 			</Link>
 		);
@@ -45,5 +45,4 @@ const MenuListItem = props => {
 
 MenuListItem.propTypes = propTypes;
 MenuListItem.defaultProps = defaultProps;
-
 export default MenuListItem;

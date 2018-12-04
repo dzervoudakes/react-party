@@ -14,7 +14,7 @@ const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 			<label htmlFor="firstName">First Name:</label>
 			<input
 				id="firstName"
-				className={ firstNameInvalid ? 'invalid' : '' }
+				className={firstNameInvalid ? 'invalid' : ''}
 				name="firstName"
 				type="text"
 			/>
@@ -23,7 +23,7 @@ const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 			<label htmlFor="lastName">Last Name:</label>
 			<input
 				id="lastName"
-				className={ lastNameInvalid ? 'invalid' : '' }
+				className={lastNameInvalid ? 'invalid' : ''}
 				name="lastName"
 				type="text"
 			/>
@@ -31,12 +31,11 @@ const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 		<input
 			className="submit-button"
 			type="submit"
-			onClick={ submitForm }
+			onClick={submitForm}
 			value="Reserve My Spot"
 		/>
 	</form>
 );
 
 RsvpForm.propTypes = propTypes;
-
 export default RsvpForm;

@@ -3,8 +3,8 @@ import React, { Suspense } from 'react';
 
 const dynamicImport = ImportComponent => (
 	props => (
-		<Suspense fallback={ <div>placeholder for something else</div> }>
-			<ImportComponent { ...props } />
+		<Suspense fallback={<div>placeholder for something else</div>}>
+			<ImportComponent {...props} />
 		</Suspense>
 	)
 );
