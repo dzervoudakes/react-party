@@ -8,11 +8,15 @@ const routes = [
 	},
 	{
 		path: '/faq',
-		component: dynamicImport(() => import(/* webpackChunkName: "faq" */ '@/components/faq'))
+		component: dynamicImport(() =>
+			import(/* webpackChunkName: "faq" */ '@/components/faq')
+		)
 	},
 	{
 		path: '/rsvp',
-		component: dynamicImport(() => import(/* webpackChunkName: "rsvp" */ '@/components/rsvp'))
+		component: dynamicImport(() =>
+			import(/* webpackChunkName: "rsvp" */ '@/components/rsvp')
+		)
 	}
 ];
 
