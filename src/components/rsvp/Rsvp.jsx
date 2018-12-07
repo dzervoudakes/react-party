@@ -1,7 +1,8 @@
 import React from 'react';
+import { hot } from 'react-hot-loader';
 // import PropTypes from 'prop-types';
-import RsvpForm from './RsvpForm';
-import './scss/Rsvp';
+import RsvpForm from './rsvp-form';
+import './Rsvp.scss';
 
 const RsvpAction = require('@/actions/RsvpAction.js');
 const RsvpStore = require('@/stores/RsvpStore.js');
@@ -105,4 +106,4 @@ class Rsvp extends React.Component {
 	}
 }
 
-export default Rsvp;
+export default hot(module)(Rsvp);

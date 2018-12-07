@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './scss/FaqBlock';
+import './FaqBlock.scss';
 
 const propTypes = {
 	answer: PropTypes.string.isRequired,

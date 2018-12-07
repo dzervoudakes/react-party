@@ -1,5 +1,5 @@
 import Info from '@/components/info';
-import dynamicImport from 'common/hocs/dynamicImport';
+import dynamicImport from 'common/hocs/dynamic-import';
 
 const routes = [
 	{

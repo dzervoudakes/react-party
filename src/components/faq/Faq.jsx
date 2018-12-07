@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import FaqBlock from './FaqBlock';
+import FaqBlock from './faq-block';
 
 const FaqAction = require('@/actions/FaqAction.js');
 const FaqStore = require('@/stores/FaqStore.js');

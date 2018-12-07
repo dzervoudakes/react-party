@@ -1,8 +1,8 @@
 import React from 'react';
+import { hot } from 'react-hot-loader';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import { Route, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
 import routes from '@/routes';
 import Header from './header';
 import Footer from './footer';

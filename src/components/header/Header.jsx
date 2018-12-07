@@ -1,7 +1,7 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
-import { MenuListItem } from '@/components/common';
-import './scss/Header';
+import MenuListItem from 'common/lists/menu-list-item';
+import './Header.scss';
 
 class Header extends React.Component {
 	constructor() {
