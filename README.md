@@ -3,7 +3,7 @@
 
 **Disclaimer:** I am not responsible for any content (including foul language) which he may decide to post.
 
-## Instructions
+## Build Scripts
 
 ### Install Dependencies
 Note: I recommend `node` >= v10.11.0 and `npm` >= v6.4.1 to run the application.
