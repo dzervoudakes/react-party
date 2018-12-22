@@ -17,4 +17,5 @@ const FaqBlock = ({ answer, index, question, updatePanel }) => (
 );
 
 FaqBlock.propTypes = propTypes;
+
 export default FaqBlock;

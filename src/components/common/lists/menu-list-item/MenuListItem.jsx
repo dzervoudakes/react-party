@@ -45,4 +45,5 @@ const MenuListItem = props => {
 
 MenuListItem.propTypes = propTypes;
 MenuListItem.defaultProps = defaultProps;
+
 export default MenuListItem;

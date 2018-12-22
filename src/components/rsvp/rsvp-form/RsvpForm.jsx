@@ -38,4 +38,5 @@ const RsvpForm = ({ firstNameInvalid, lastNameInvalid, submitForm }) => (
 );
 
 RsvpForm.propTypes = propTypes;
+
 export default RsvpForm;
