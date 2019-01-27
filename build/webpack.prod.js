@@ -33,8 +33,8 @@ const webpackConfig = merge(common, {
 		}),
 		new OptimizeCssAssetsPlugin(),
 		new UglifyJsPlugin({
-			sourceMap: true,
-			extractComments: true
+			extractComments: true,
+			sourceMap: true
 		}),
 		new webpack.optimize.AggressiveMergingPlugin(),
 		new CopyWebpackPlugin([
