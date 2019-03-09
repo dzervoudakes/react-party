@@ -11,7 +11,9 @@ const cli = new CLIEngine({ fix });
 const report = cli.executeOnFiles(['**/*.js', '**/*.jsx']);
 const formatter = cli.getFormatter();
 
-if (fix) CLIEngine.outputFixes(report);
+if (fix) {
+	CLIEngine.outputFixes(report);
+}
 
 spinner.stop();
 console.log(formatter(report.results));
