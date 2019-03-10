@@ -3,7 +3,6 @@ const express = require('express');
 const history = require('connect-history-api-fallback');
 const chalk = require('chalk');
 const apiRoutes = require('./routes/api');
-const config = require('./config');
 
 const app = express();
 const port = process.env.port || 8080;
@@ -12,7 +11,9 @@ global.__dirname = __dirname;
 
 app.use(history());
 
-if (config.isDevelopment) {
+const isDevelopment = process.argv.indexOf('--development') !== -1;
+
+if (isDevelopment) {
 	const middleware = require('./build/dev-middleware');
 	const { devMiddleware, hotMiddleware } = middleware;
 
