@@ -54,4 +54,4 @@ npm run build --report
 ## Server Environments
 > The same Express server handles development and production content. To run the server locally
 > with webpack dev middleware, run `npm start`. To run the production server with static
-> build assets from 'dist', run `NODE_ENV=production node index.js`.
+> build assets from 'dist', simply run `node index.js`.
