@@ -3,11 +3,13 @@ import React, { lazy, Suspense } from 'react';
 
 const dynamicImport = ImportComponent => {
 	const C = lazy(ImportComponent);
+
 	const DynamicImport = props => (
 		<Suspense fallback={<div>placeholder for something else</div>}>
 			<C {...props} />
 		</Suspense>
 	);
+
 	DynamicImport.displayName = 'DynamicImport';
 	return DynamicImport;
 };
