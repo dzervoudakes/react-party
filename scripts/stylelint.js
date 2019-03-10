@@ -15,7 +15,7 @@ stylelint
 		console.log(result.output);
 
 		if (!result.errored) {
-			console.log(chalk.green('Style linting complete: no warnings or errors found.'));
+			console.log(chalk.green('Style linting complete: no warnings or errors found.\n'));
 		}
 	})
 	.catch(error => {
