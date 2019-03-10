@@ -28,5 +28,5 @@ app.use('/api', apiRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
-	console.log(chalk.cyan(`react-party booted up on port ${port}`));
+	console.log(chalk.cyan(`react-party server booted up on port ${port}`));
 });
